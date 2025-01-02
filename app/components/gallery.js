@@ -39,7 +39,7 @@ const Gallery = () => {
   const [autoplay, setAutoplay] = useState(true);       // Autoplay toggle
   const [isDragging, setIsDragging] = useState(false);  // Track drag state
   const [startX, setStartX] = useState(0);              // Starting X position for drag
-  
+
   // Refs for DOM manipulation
   const containerRef = useRef(null);                    // Container element reference
   const slideRefs = useRef([]);                         // Array of slide element references
@@ -89,10 +89,10 @@ const Gallery = () => {
 
   const handleDragEnd = (e) => {
     if (!isDragging) return;
-    
+
     const endX = e.clientX || e.changedTouches?.[0].clientX;
     const deltaX = endX - startX;
-    
+
     // Trigger slide change if drag distance is sufficient
     if (Math.abs(deltaX) > 100) {
       if (deltaX > 0) {
@@ -101,7 +101,7 @@ const Gallery = () => {
         handleNext();
       }
     }
-    
+
     setIsDragging(false);
   };
 
@@ -137,7 +137,7 @@ const Gallery = () => {
             <h2 className="text-4xl flex justify-center font-bold text-white mb-4">Gallery</h2>
             <div className="w-24 h-1 bg-gradient-to-r from-orange-500 via-cyan-500 to-orange-500 mx-auto" />
           </div>
-          
+
           {/* Gallery Container */}
           <div ref={containerRef} className="relative h-[60vh] w-full max-w-4xl mx-auto">
             {/* Image Cards */}
@@ -183,8 +183,8 @@ const Gallery = () => {
               onClick={() => setAutoplay(!autoplay)}
               className="h-12 w-12 rounded-full bg-gray-800/50 hover:bg-gray-800/70 flex items-center justify-center transition-colors"
             >
-              {autoplay ? 
-                <Pause className="h-6 w-6 text-white" /> : 
+              {autoplay ?
+                <Pause className="h-6 w-6 text-white" /> :
                 <Play className="h-6 w-6 text-white" />
               }
             </button>

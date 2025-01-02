@@ -11,6 +11,8 @@ const Header = () => {
     const headerRef = useRef(null)
     const { scrollY } = useScroll()
 
+    const isDevelopment = process.env.NEXT_PUBLIC_ENV === "development";
+
     // Branch-specific icon animations
     const iconVariants = {
         cse: {
@@ -337,7 +339,7 @@ const Header = () => {
             ref={headerRef}
             className="fixed w-full z-50 h-24 sm:h-28"
         >
-            <motion.div className="absolute inset-0 bg-[#1A0F1F]/90 backdrop-blur-sm">
+            <motion.div className={`absolute inset-0 ${isDevelopment ? "bg-green-700" : "bg-[#1A0F1F]/90"} backdrop-blur-sm`}>
                 <div className="absolute inset-0 bg-gradient-to-r from-[#2D1810]/50 via-transparent to-[#1F2937]/50" />
             </motion.div>
 
@@ -430,7 +432,7 @@ const Header = () => {
                     </motion.div>
                 )}
             </AnimatePresence>
-        </motion.header>
+        </motion.header >
     )
 }
 
