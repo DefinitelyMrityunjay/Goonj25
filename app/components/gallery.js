@@ -1,208 +1,350 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
+import { motion, useScroll, useTransform, useSpring, useAnimationFrame } from 'framer-motion';
+import { ArrowRight, Pause, Play } from 'lucide-react';
 import Image from 'next/image';
-import { ChevronLeft, ChevronRight, Play, Pause } from 'lucide-react';
-import gsap from 'gsap';
 
-// Register GSAP plugins on client-side only to avoid SSR issues
-if (typeof window !== 'undefined') {
-  gsap.registerPlugin();
-}
-
-// Sample gallery images data
-// In production, this would typically come from an API or CMS
-const galleryImages = [
-  {
-    src: 'https://images.unsplash.com/photo-1682687220742-aba13b6e50ba?w=800&auto=format&fit=crop',
-    alt: 'Artistic mountain landscape at sunset'
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1682686581551-867e0b208bd1?w=800&auto=format&fit=crop',
-    alt: 'Urban cityscape with modern architecture'
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1682695796497-31a44224d6d6?w=800&auto=format&fit=crop',
-    alt: 'Minimalist architectural detail'
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1682695797221-8164ff1fafc9?w=800&auto=format&fit=crop',
-    alt: 'Abstract light patterns'
-  }
+const galleryItems = [
+    // Your original items array...
+    {
+        id: 1,
+        title: "Cultural Festival",
+        description: "Annual celebrations showcasing diverse traditions",
+        type: "featured",
+        layout: "tall"
+    },
+    {
+        id: 2,
+        title: "Tech Innovation",
+        description: "Latest technological breakthroughs",
+        type: "regular"
+    },
+    {
+        id: 3,
+        title: "Art Exhibition",
+        description: "Contemporary art showcase",
+        type: "regular"
+    },
+    {
+        id: 4,
+        title: "Music Concert",
+        description: "Live performances by talented artists",
+        type: "wide"
+    },
+    // Second Group
+    {
+        id: 5,
+        title: "Scientific Discovery",
+        description: "Groundbreaking research findings",
+        type: "featured",
+        layout: "wide"
+    },
+    {
+        id: 6,
+        title: "Sports Event",
+        description: "Championship matches and tournaments",
+        type: "regular"
+    },
+    {
+        id: 7,
+        title: "Fashion Show",
+        description: "Trendsetting designs on the runway",
+        type: "regular"
+    },
+    {
+        id: 8,
+        title: "Food Festival",
+        description: "Culinary delights from around the world",
+        type: "wide"
+    },
+    // Third Group
+    {
+        id: 9,
+        title: "Dance Performance",
+        description: "Elegant choreography and expression",
+        type: "featured",
+        layout: "tall"
+    },
+    {
+        id: 10,
+        title: "Architecture",
+        description: "Innovative structural designs",
+        type: "regular"
+    },
+    {
+        id: 11,
+        title: "Nature Photography",
+        description: "Capturing Earth's natural beauty",
+        type: "regular"
+    },
+    {
+        id: 12,
+        title: "Urban Life",
+        description: "City scenes and street culture",
+        type: "wide"
+    }
 ];
 
-// Helper function to generate rotation values for the card stack effect
-// Creates an alternating pattern of rotations for visual interest
-const generateRotation = (index) => [-6, -3, 0, 3, 6][index % 5];
+const BentoGallery = () => {
+    const containerRef = useRef(null);
+    const scrollRef = useRef(null);
+    const [paths, setPaths] = useState([]);
+    const [isDragging, setIsDragging] = useState(false);
+    const [isHovering, setIsHovering] = useState(false);
+    const [scrollPosition, setScrollPosition] = useState(0);
+    const [duplicateSets, setDuplicateSets] = useState(2);
+    const [autoScrollEnabled, setAutoScrollEnabled] = useState(true);
+    const [userScrolling, setUserScrolling] = useState(false);
+    const scrollTimeout = useRef(null);
+    const lastScrollPosition = useRef(0);
+    const lastTime = useRef(performance.now());
+    const scrollVelocity = useRef(2); // Controls auto-scroll speed
 
-const Gallery = () => {
-  // State management
-  const [active, setActive] = useState(0);              // Currently active slide index
-  const [autoplay, setAutoplay] = useState(true);       // Autoplay toggle
-  const [isDragging, setIsDragging] = useState(false);  // Track drag state
-  const [startX, setStartX] = useState(0);              // Starting X position for drag
+    // Generate duplicate items with unique keys
+    const generateDuplicateItems = (numSets) => {
+        return Array.from({ length: numSets }, (_, setIndex) =>
+            galleryItems.map(item => ({
+                ...item,
+                id: `${item.id}-${setIndex}`,
+            }))
+        ).flat();
+    };
 
-  // Refs for DOM manipulation
-  const containerRef = useRef(null);                    // Container element reference
-  const slideRefs = useRef([]);                         // Array of slide element references
+    const [displayItems, setDisplayItems] = useState(generateDuplicateItems(duplicateSets));
 
-  // Animate cards when transitioning between slides
-  const animateCards = useCallback((direction = 1) => {
-    const timeline = gsap.timeline();
-    const nextIndex = (active + direction + galleryImages.length) % galleryImages.length;
+    // Handle user scroll end detection with smooth transition
+    const handleScrollEnd = () => {
+        if (scrollTimeout.current) {
+            clearTimeout(scrollTimeout.current);
+        }
+        scrollTimeout.current = setTimeout(() => {
+            setUserScrolling(false);
+            lastScrollPosition.current = scrollRef.current?.scrollLeft || 0;
+        }, 200);
+    };
 
-    // Animate each card in the stack
-    galleryImages.forEach((_, index) => {
-      const element = slideRefs.current[index];
-      const isActive = index === active;
-      const isNext = index === nextIndex;
-      // Calculate z-index to ensure proper stacking order
-      const zIndex = isNext ? 999 : galleryImages.length - Math.abs(index - nextIndex);
+    // Handle scroll events
+    useEffect(() => {
+        const scrollContainer = scrollRef.current;
+        if (!scrollContainer) return;
 
-      // Animate position and appearance of each card
-      timeline.to(element, {
-        opacity: isNext ? 1 : 0.7,           // Active card is fully opaque
-        scale: isNext ? 1 : 0.95,            // Active card is full size
-        rotation: isNext ? 0 : generateRotation(index), // Apply rotation for stack effect
-        zIndex,
-        duration: 0.6,
-        ease: 'power2.inOut'
-      }, 0);
+        const handleScroll = () => {
+            const currentPosition = scrollContainer.scrollLeft;
+            setScrollPosition(currentPosition);
+
+            // Detect user scrolling
+            if (Math.abs(currentPosition - lastScrollPosition.current) > 1) {
+                setUserScrolling(true);
+                handleScrollEnd();
+            }
+
+            lastScrollPosition.current = currentPosition;
+        };
+
+        scrollContainer.addEventListener('scroll', handleScroll, { passive: true });
+        return () => scrollContainer.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    // Optimized smooth auto-scroll animation
+    useAnimationFrame(() => {
+        if (scrollRef.current && autoScrollEnabled && !isDragging && !isHovering && !userScrolling) {
+            const scrollContainer = scrollRef.current;
+            const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+            const scrollThreshold = maxScroll * 0.7;
+
+            // Use a constant velocity for smoother motion
+            const scrollSpeed = 3; // Increased speed
+            let newPosition = scrollPosition + scrollSpeed;
+
+            // Add new content before reaching the end
+            if (newPosition > scrollThreshold) {
+                setDuplicateSets(prev => prev + 1);
+                setDisplayItems(generateDuplicateItems(duplicateSets + 1));
+            }
+
+            // Use requestAnimationFrame for smoother scrolling
+            requestAnimationFrame(() => {
+                if (scrollContainer) {
+                    scrollContainer.scrollLeft = newPosition;
+                    setScrollPosition(newPosition);
+                    lastScrollPosition.current = newPosition;
+                }
+            });
+        }
     });
 
-    // Update active slide after animation
-    timeline.then(() => setActive(nextIndex));
-  }, [active]);
+    // Group items for the bento grid layout
+    const groupedItems = displayItems.reduce((acc, item, index) => {
+        const groupIndex = Math.floor(index / 4);
+        if (!acc[groupIndex]) acc[groupIndex] = [];
+        acc[groupIndex].push(item);
+        return acc;
+    }, []);
 
-  // Navigation handlers
-  const handleNext = useCallback(() => {
-    animateCards(1);
-  }, [animateCards]);
-
-  const handlePrev = useCallback(() => {
-    animateCards(-1);
-  }, [animateCards]);
-
-  // Touch and mouse event handlers for drag functionality
-  const handleDragStart = (e) => {
-    setIsDragging(true);
-    setStartX(e.clientX || e.touches?.[0].clientX);
-  };
-
-  const handleDragEnd = (e) => {
-    if (!isDragging) return;
-
-    const endX = e.clientX || e.changedTouches?.[0].clientX;
-    const deltaX = endX - startX;
-
-    // Trigger slide change if drag distance is sufficient
-    if (Math.abs(deltaX) > 100) {
-      if (deltaX > 0) {
-        handlePrev();
-      } else {
-        handleNext();
-      }
-    }
-
-    setIsDragging(false);
-  };
-
-  // Initialize card positions and properties on mount
-  useEffect(() => {
-    galleryImages.forEach((_, index) => {
-      const element = slideRefs.current[index];
-      const isActive = index === active;
-      const zIndex = isActive ? 999 : galleryImages.length - Math.abs(index - active);
-
-      gsap.set(element, {
-        opacity: isActive ? 1 : 0.7,
-        scale: isActive ? 1 : 0.95,
-        rotation: isActive ? 0 : generateRotation(index),
-        zIndex
-      });
+    const { scrollYProgress } = useScroll({
+        target: containerRef,
+        offset: ["start end", "end start"]
     });
-  }, []);
 
-  // Handle autoplay functionality
-  useEffect(() => {
-    if (!autoplay) return;
-    const interval = setInterval(handleNext, 5000);
-    return () => clearInterval(interval); // Cleanup on unmount or autoplay change
-  }, [autoplay, handleNext]);
+    const springConfig = { stiffness: 100, damping: 30, bounce: 0 };
 
-  return (
-    <div className="relative bg-gradient-to-b from-gray-900 to-gray-950 min-h-screen">
-      <div className="relative z-10 min-h-screen flex items-center">
-        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Gallery Header */}
-          <div className="py-10">
-            <h2 className="text-4xl flex justify-center font-bold text-white mb-4">Gallery</h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-orange-500 via-cyan-500 to-orange-500 mx-auto" />
-          </div>
+    const titleY = useSpring(
+        useTransform(scrollYProgress, [0, 0.1, 0.25], [-50, -25, 0]),
+        springConfig
+    );
 
-          {/* Gallery Container */}
-          <div ref={containerRef} className="relative h-[60vh] w-full max-w-4xl mx-auto">
-            {/* Image Cards */}
-            {galleryImages.map((image, index) => (
-              <div
-                key={index}
-                ref={el => slideRefs.current[index] = el}
-                className="absolute inset-0 cursor-grab active:cursor-grabbing"
-                onMouseDown={handleDragStart}
-                onMouseUp={handleDragEnd}
-                onMouseLeave={handleDragEnd}
-                onTouchStart={handleDragStart}
-                onTouchEnd={handleDragEnd}
-              >
-                <div className="relative h-full w-full rounded-3xl overflow-hidden shadow-2xl">
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    fill
-                    className="object-cover"
-                    priority={index === active}
-                    draggable={false}
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
+    const scale = useSpring(
+        useTransform(scrollYProgress, [0, 0.1, 0.25], [0.8, 0.9, 1]),
+        springConfig
+    );
 
-          {/* Navigation Controls */}
-          <div className="flex items-center justify-center gap-4 mt-8">
-            {/* Previous Button */}
-            <button
-              onClick={handlePrev}
-              onMouseEnter={() => setAutoplay(false)}
-              onMouseLeave={() => setAutoplay(true)}
-              className="h-12 w-12 rounded-full bg-gray-800/50 hover:bg-gray-800/70 flex items-center justify-center group transition-colors"
-            >
-              <ChevronLeft className="h-6 w-6 text-white group-hover:rotate-12 transition-transform duration-300" />
-            </button>
+    const opacity = useSpring(
+        useTransform(scrollYProgress, [0, 0.1, 0.25], [0.5, 0.7, 1]),
+        springConfig
+    );
 
-            {/* Play/Pause Button */}
-            <button
-              onClick={() => setAutoplay(!autoplay)}
-              className="h-12 w-12 rounded-full bg-gray-800/50 hover:bg-gray-800/70 flex items-center justify-center transition-colors"
-            >
-              {autoplay ?
-                <Pause className="h-6 w-6 text-white" /> :
-                <Play className="h-6 w-6 text-white" />
-              }
-            </button>
+    const rotate = useSpring(
+        useTransform(scrollYProgress, [0, 0.1, 0.25], [5, 2, 0]),
+        springConfig
+    );
 
-            {/* Next Button */}
-            <button
-              onClick={handleNext}
-              onMouseEnter={() => setAutoplay(false)}
-              onMouseLeave={() => setAutoplay(true)}
-              className="h-12 w-12 rounded-full bg-gray-800/50 hover:bg-gray-800/70 flex items-center justify-center group transition-colors"
-            >
-              <ChevronRight className="h-6 w-6 text-white group-hover:-rotate-12 transition-transform duration-300" />
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+    const getItemClasses = (type, layout) => {
+        switch (type) {
+            case 'featured':
+                return layout === 'tall'
+                    ? 'row-span-2 col-span-1 h-full'
+                    : 'row-span-1 col-span-2 w-full';
+            case 'wide':
+                return 'col-span-2 row-span-1';
+            default:
+                return 'col-span-1 row-span-1';
+        }
+    };
+
+    return (
+        <section
+            ref={containerRef}
+            className="min-h-screen relative overflow-hidden bg-gradient-to-b from-[#0D0221] via-[#150634] to-[#0D0221]"
+        >
+            {/* Background patterns and header remain the same... */}
+            <div className="sticky top-0 py-16">
+                <motion.div
+                    style={{ y: titleY }}
+                    className="container mx-auto px-4 mb-12 relative z-10"
+                >
+                    <motion.h2
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="text-4xl md:text-6xl font-bold text-center text-orange-50 mb-4"
+                    >
+                        Past <span className="text-orange-400">Glimpses</span>
+                    </motion.h2>
+                    <motion.div
+                        initial={{ width: 0 }}
+                        animate={{ width: "100px" }}
+                        transition={{ duration: 0.8 }}
+                        className="h-1 bg-orange-500 mx-auto"
+                    />
+                </motion.div>
+
+                {/* Gallery */}
+                <motion.div
+                    ref={scrollRef}
+                    style={{
+                        scale,
+                        opacity,
+                        rotateX: rotate,
+                        perspective: "1000px"
+                    }}
+                    className="overflow-x-auto overflow-y-hidden py-10 relative z-10 cursor-grab active:cursor-grabbing"
+                    onMouseEnter={() => setIsHovering(true)}
+                    onMouseLeave={() => setIsHovering(false)}
+                    onMouseDown={() => setIsDragging(true)}
+                    onMouseUp={() => setIsDragging(false)}
+                    onTouchStart={() => setIsDragging(true)}
+                    onTouchEnd={() => setIsDragging(false)}
+                >
+                    <div className="min-w-max px-4 pb-8">
+                        <motion.div className="flex gap-8">
+                            {groupedItems.map((group, groupIndex) => (
+                                <motion.div
+                                    key={groupIndex}
+                                    className="grid grid-cols-3 grid-rows-2 gap-4 w-[800px] h-[500px]"
+                                    initial={{
+                                        y: 50 * (groupIndex + 1),
+                                        opacity: 0,
+                                    }}
+                                    animate={{
+                                        y: 0,
+                                        opacity: 1,
+                                    }}
+                                    transition={{
+                                        duration: 0.6,
+                                        delay: 0.1 * groupIndex,
+                                    }}
+                                >
+                                    {group.map((item) => (
+                                        <motion.div
+                                            key={item.id}
+                                            whileHover={{ scale: 1.02 }}
+                                            className={`relative group overflow-hidden rounded-xl bg-[#1A0F1F] border border-cyan-500/20 ${getItemClasses(item.type, item.layout)}`}
+                                        >
+                                            <Image
+                                                src="/api/placeholder/800/600"
+                                                alt={item.title}
+                                                className="w-full h-full object-cover"
+                                                fill
+                                            />
+
+                                            <div className="absolute inset-0 bg-gradient-to-t from-[#0D0221]/90 via-[#150634]/60 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300">
+                                                <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                                    <h3 className="text-xl font-bold text-orange-50 mb-2">{item.title}</h3>
+                                                    <p className="text-sm text-orange-100/80">{item.description}</p>
+                                                </div>
+                                            </div>
+
+                                            <motion.div
+                                                className="absolute inset-0 border-2 border-orange-500/0 rounded-xl transition-opacity duration-300"
+                                                whileHover={{
+                                                    borderColor: "rgba(255,165,0,0.2)",
+                                                    boxShadow: "0 0 20px rgba(255,165,0,0.1)"
+                                                }}
+                                            />
+                                        </motion.div>
+                                    ))}
+                                </motion.div>
+                            ))}
+                        </motion.div>
+                    </div>
+                </motion.div>
+
+                {/* Scroll Indicator */}
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.5 }}
+                    className="flex items-center justify-center gap-2 mt-8 text-orange-100/60 relative z-10"
+                >
+                    <p className="text-sm">
+                        {autoScrollEnabled ?
+                            "Scroll Horizontally" :
+                            "Manual scroll mode - Click resume for auto-scroll"
+                        }
+                    </p>
+                    <ArrowRight className="w-4 h-4" />
+                </motion.div>
+            </div>
+
+            {/* Hide Scrollbar */}
+            <style jsx global>{`
+                .overflow-x-auto::-webkit-scrollbar {
+                    display: none;
+                }
+                .overflow-x-auto {
+                    -ms-overflow-style: none;
+                    scrollbar-width: none;
+                }
+            `}</style>
+        </section>
+    );
 };
-
-export default Gallery;
+export default BentoGallery;
