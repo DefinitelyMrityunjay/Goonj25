@@ -221,7 +221,7 @@ const galleryItems = [
         src: "/Past_Gallery/individual-portrait-2.jpg"
     },
     {
-        id: 32,
+        id: 31,
         title: "Best Friends",
         description: "Two friends sharing a joyful moment during the event.",
         type: "wide",
