@@ -4,83 +4,235 @@ import { ArrowRight, Pause, Play } from 'lucide-react';
 import Image from 'next/image';
 
 const galleryItems = [
-    // Your original items array...
     {
         id: 1,
-        title: "Cultural Festival",
-        description: "Annual celebrations showcasing diverse traditions",
+        title: "Sports",
+        description: "An exciting display of athleticism across multiple sports events.",
         type: "featured",
+        src: "/Past_Gallery/sports.jpg",
         layout: "tall"
     },
     {
         id: 2,
-        title: "Tech Innovation",
-        description: "Latest technological breakthroughs",
-        type: "regular"
+        title: "Games",
+        description: "Fun and engaging games brought students together in friendly competition.",
+        type: "regular",
+        src: "/Past_Gallery/games.jpg"
     },
     {
         id: 3,
-        title: "Art Exhibition",
-        description: "Contemporary art showcase",
-        type: "regular"
+        title: "Dance Performance",
+        description: "Energetic and elegant choreography captivated the audience.",
+        type: "regular",
+        src: "/Past_Gallery/dance-performance.jpg"
     },
     {
         id: 4,
-        title: "Music Concert",
-        description: "Live performances by talented artists",
-        type: "wide"
+        title: "Band Performance",
+        description: "Mesmerizing musical performances by talented bands.",
+        type: "wide",
+        src: "/Past_Gallery/band-performance.jpg"
     },
-    // Second Group
     {
         id: 5,
-        title: "Scientific Discovery",
-        description: "Groundbreaking research findings",
+        title: "Nukkad Natak",
+        description: "Street plays highlighting social and cultural issues.",
         type: "featured",
+        src: "/Past_Gallery/nukkad-natak.jpg",
         layout: "wide"
     },
     {
         id: 6,
-        title: "Sports Event",
-        description: "Championship matches and tournaments",
-        type: "regular"
+        title: "Hackathon",
+        description: "Innovative coding marathons solving real-world problems.",
+        type: "regular",
+        src: "/Past_Gallery/hackathon.jpg"
     },
     {
         id: 7,
-        title: "Fashion Show",
-        description: "Trendsetting designs on the runway",
-        type: "regular"
+        title: "Parvinder Singh",
+        description: "Laughter-filled session by Parvinder.",
+        type: "regular",
+        src: "/Past_Gallery/comedian.jpg"
     },
     {
         id: 8,
-        title: "Food Festival",
-        description: "Culinary delights from around the world",
-        type: "wide"
+        title: "DJ Night",
+        description: "An electrifying night with groovy beats and dance.",
+        type: "wide",
+        src: "/Past_Gallery/dj-night.jpg"
     },
-    // Third Group
     {
         id: 9,
-        title: "Dance Performance",
-        description: "Elegant choreography and expression",
+        title: "Mr. and Mrs. Goonj",
+        description: "A showcase of charm, wit, and talent to crown the best.",
         type: "featured",
+        src: "/Past_Gallery/mr-mrs-goonj.jpg",
         layout: "tall"
     },
     {
         id: 10,
-        title: "Architecture",
-        description: "Innovative structural designs",
-        type: "regular"
+        title: "Solo Dance",
+        description: "Individual performers lit up the stage with their moves.",
+        type: "regular",
+        src: "/Past_Gallery/solo-dance.jpg"
     },
     {
         id: 11,
-        title: "Nature Photography",
-        description: "Capturing Earth's natural beauty",
-        type: "regular"
+        title: "Talent Hunt",
+        description: "An open platform for showcasing diverse talents.",
+        type: "regular",
+        src: "/Past_Gallery/talent-hunt.jpg"
     },
     {
         id: 12,
-        title: "Urban Life",
-        description: "City scenes and street culture",
-        type: "wide"
+        title: "Star Night",
+        description: "A grand evening with spectacular performances by stars.",
+        type: "wide",
+        src: "/Past_Gallery/star-night.jpg"
+    },
+    {
+        id: 13,
+        title: "Chess",
+        description: "A battle of wits and strategy in intense chess matches.",
+        type: "featured",
+        src: "/Past_Gallery/chess.jpg",
+        layout: "tall"
+    },
+    {
+        id: 14,
+        title: "Stalls by Students",
+        description: "Creative and innovative stalls showcasing student talents and ideas.",
+        type: "regular",
+        src: "/Past_Gallery/student-stalls.jpg"
+    },
+    {
+        id: 15,
+        title: "IPL Auction",
+        description: "Exciting mock IPL auction with students as team owners.",
+        type: "regular",
+        src: "/Past_Gallery/ipl-auction.jpg"
+    },
+    {
+        id: 16,
+        title: "Solo Singing",
+        description: "Melodious solo singing performances by talented vocalists.",
+        type: "wide",
+        src: "/Past_Gallery/solo-singing.jpg"
+    },
+    {
+        id: 17,
+        title: "Blood Donation",
+        description: "A noble initiative for saving lives through blood donation camps.",
+        type: "featured",
+        src: "/Past_Gallery/blood-donation.jpg",
+        layout: "wide"
+    },
+    {
+        id: 18,
+        title: "Food Stalls",
+        description: "A delightful spread of cuisines offered by food stalls.",
+        type: "regular",
+        src: "/Past_Gallery/food-stalls.jpg"
+    },
+    {
+        id: 19,
+        title: "Kavi Sammelan",
+        description: "A mesmerizing evening of poetry and literary expressions.",
+        type: "regular",
+        src: "/Past_Gallery/kavi-sammelan.jpg"
+    },
+    {
+        id: 20,
+        title: "Marathon",
+        description: "A high-energy marathon marking the spirit of unity and health.",
+        type: "wide",
+        src: "/Past_Gallery/marathon.jpg"
+    },
+    {
+        id: 21,
+        title: "Logo",
+        description: "Beautiful GOONJ.",
+        type: "featured",
+        src: "/Past_Gallery/Logo.jpg",
+        type:"wide"
+    },
+    {
+        id: 22,
+        title: "Entrance Arch",
+        description: "A grand and welcoming entrance decorated with lights and banners.",
+        type: "regular",
+        src: "/Past_Gallery/entrance-arch.jpg"
+    },
+    {
+        id: 23,
+        title: "Photo Frames",
+        description: "Photo Frames for memorable photoframes",
+        type: "regular",
+        src: "/Past_Gallery/props.jpg"
+    },
+    {
+        id: 24,
+        title: "Main Stage Decorations",
+        description: "A vibrant and eye-catching setup for the central stage.",
+        type: "wide",
+        src: "/Past_Gallery/main-stage-decor.jpg"
+    },
+    {
+        id: 25,
+        title: "Friends Forever",
+        description: "A cheerful group of friends enjoying the event together.",
+        type: "wide",
+        src: "/Past_Gallery/friends-group-1.jpg"
+    },
+    {
+        id: 26,
+        title: "Solo Smile",
+        description: "A beautiful portrait capturing a student's joyful moment.",
+        type: "regular",
+        src: "/Past_Gallery/individual-portrait-1.jpg"
+    },
+    {
+        id: 27,
+        title: "Team Spirit",
+        description: "A lively group photo showcasing camaraderie.",
+        type: "wide",
+        src: "/Past_Gallery/team-spirit.jpg"
+    },
+    {
+        id: 28,
+        title: "Happy Faces",
+        description: "Friends posing with radiant smiles during the festivities.",
+        type: "regular",
+        src: "/Past_Gallery/friends-group-2.jpg"
+    },
+    {
+        id: 29,
+        title: "Bonding Moments",
+        description: "A small group sharing a moment together.",
+        type: "wide",
+        src: "/Past_Gallery/bonding-moments.jpg"
+    },
+    {
+        id: 30,
+        title: "Side Shot",
+        description: "A side shot of a student lost in the moment.",
+        type: "regular",
+        src: "/Past_Gallery/individual-portrait-2.jpg"
+    },
+    {
+        id: 32,
+        title: "Best Friends",
+        description: "Two friends sharing a joyful moment during the event.",
+        type: "wide",
+        src: "/Past_Gallery/two-friends-1.jpg"
+    },
+    {
+        id: 32,
+        title: "Radiant Individual",
+        description: "A bright and radiant portrait of a student.",
+        type: "regular",
+        src: "/Past_Gallery/individual-portrait-4.jpg",
     }
 ];
 
@@ -289,7 +441,7 @@ const BentoGallery = () => {
                                             className={`relative group overflow-hidden rounded-xl bg-[#1A0F1F] border border-cyan-500/20 ${getItemClasses(item.type, item.layout)}`}
                                         >
                                             <Image
-                                                src="/api/placeholder/800/600"
+                                                src={item.src}
                                                 alt={item.title}
                                                 className="w-full h-full object-cover"
                                                 fill

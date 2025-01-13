@@ -82,7 +82,7 @@ const AboutSection = () => {
                 <p className="text-gray-300">Events</p>
               </div>
               <div className="text-center p-4 bg-white/5 rounded-lg backdrop-blur-sm">
-                <h4 className="text-3xl font-bold text-cyan-500 mb-2">5000+</h4>
+                <h4 className="text-3xl font-bold text-cyan-500 mb-2">15000+</h4>
                 <p className="text-gray-300">Attendees</p>
               </div>
             </div>

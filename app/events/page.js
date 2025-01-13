@@ -18,66 +18,62 @@ const EventsPage = () => {
     const events = [
         {
             id: 1,
-            title: "Code Wars",
-            category: "technical",
-            date: "2024-12-28",
-            time: "10:00 AM - 6:00 PM",
-            location: "Computer Labs, UIET",
-            description: "Battle it out in this intensive coding competition. Solve algorithmic challenges and compete for exciting prizes.",
-            prizePool: "₹20,000",
-            teamSize: "1-2 members",
-            registrationFee: "₹200",
-            image: "/bgIMG3.png",
+            title: "Groove Up",
+            category: "cultural",
+            date: "2025-02-19",
+            time: "12:00 PM - 6:00 PM",
+            location: "UIET, Chandigarh",
+            description: `Get ready for Goonj 2025 and its most exhilarating event of the year – the Inter-College Dance Competition! 🎉Bring your energy, creativity, and passion for dance to the stage.`,
+            prizePool: "₹10,000+",
+            teamSize: "2+ members",
+            registrationFee: "₹2500/- per team",
+            image: "/events/new/groove_up_template.jpg",
             rules: [
-                "Individual or team of 2 members",
-                "Multiple programming languages supported",
-                "Internet access will not be provided",
-                "3 rounds of increasing difficulty",
-                "Time limit of 3 hours per round"
+                "Each team must consist of at least three members.",
+                "Participants are encouraged to showcase a variety of dance styles.",
+                "The judges' decisions are final and binding."
             ],
-            icon: Code
+            icon: Music
         },
         {
             id: 2,
-            title: "Battle of Bands",
+            title: "Bhangra Competition",
             category: "cultural",
-            date: "2024-12-29",
+            date: "2025-03-19",
             time: "5:00 PM - 10:00 PM",
-            location: "Main Auditorium",
-            description: "Showcase your musical talent! Bring your band and rock the stage with your original compositions or covers.",
-            prizePool: "₹30,000",
-            teamSize: "4-8 members",
-            registrationFee: "₹500 per band",
-            image: "/bgIMG3.png",
+            location: "UIET, Chandigarh",
+            description: "Imagine this: the sound of the dhol filling the air, vibrant moves lighting up the stage, and the crowd cheering for every step. It’s not just a competition; it’s a celebration of who we are—our culture. ",
+            prizePool: "₹10,000+",
+            teamSize: "2+ members",
+            registrationFee: "₹3000 per team",
+            image: "/events/new/bhangra_template.jpg",
             rules: [
-                "Minimum 4, maximum 8 members per band",
-                "20 minutes performance time",
-                "Both covers and originals allowed",
-                "Equipment must be brought by participants",
-                "Sound check 2 hours before performance"
+                "Each team must consist of at least three members.",
+                "Teams must adhere to traditional Bhangra themes and movements while incorporating creative elements.",
+                "Use of traditional Bhangra props, such as dhols, saaps, chimtas, or khundas, is allowed and encouraged.",
+                "The judges' decisions are final and binding."
             ],
             icon: Music
         },
         {
             id: 3,
-            title: "Gaming Tournament",
-            category: "gaming",
-            date: "2024-12-30",
-            time: "11:00 AM - 8:00 PM",
-            location: "E-Sports Arena",
-            description: "Compete in Valorant, CS:GO, and FIFA tournaments. Show off your gaming skills!",
-            prizePool: "₹15,000",
-            teamSize: "Varies by game",
-            registrationFee: "₹250",
-            image: "/bgIMG3.png",
+            title: "Nukkad Natak ",
+            category: "cultural",
+            date: "2024-03-19",
+            time: "11:00 AM - 2:00 PM",
+            location: "UIET, Chandigarh",
+            description: "This is your chance to step into the soul-stirring world of street theatre, where words are powerful, emotions are raw, and every performance has the power to inspire change.",
+            prizePool: "₹10,000+",
+            teamSize: "2+ members",
+            registrationFee: "₹2500 per team",
+            image: "/events/new/nukkad_natak_template.jpg",
             rules: [
-                "Bring your own peripherals",
-                "Tournament structure depends on participants",
-                "Multiple game titles available",
-                "Team size varies by game",
-                "Fair play policy strictly enforced"
+                "Performances can be in Hindi, English or a mix of both.",
+                "Vulgarity or offensive content is strictly prohibited.",
+                "Teams may use handheld props and costumes.",
+                "Performances must adapt to an open and informal setting.",
             ],
-            icon: Gamepad
+            icon: Music
         }
     ];
 
@@ -345,7 +341,7 @@ const EventsPage = () => {
                                                                 {event.category.charAt(0).toUpperCase() + event.category.slice(1)}
                                                             </Badge>
                                                         </DialogHeader>
-                                                        <DialogDescription className="text-gray-400 h-[80vh] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-800">
+                                                        <DialogDescription className="text-gray-400 h-[80vh] overflow-y-scroll scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-800">
                                                             <div className="mt-6 space-y-8">
                                                                 {/* Image Section with Hover Effect */}
                                                                 <div className="relative group">

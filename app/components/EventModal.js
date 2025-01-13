@@ -171,7 +171,7 @@ const EventModal = ({ isOpen, onClose, event }) => {
                                                     src={event.image}
                                                     fill
                                                     alt={event.title}
-                                                    className="object-cover"
+                                                    className="object-cover object-top"
                                                 />
                                                 <motion.div
                                                     className="absolute inset-0 bg-gradient-to-t from-[#0D0221]/80 via-transparent to-transparent after:absolute after:inset-0 after:bg-gradient-to-r after:from-cyan-400/10 after:via-orange-400/10 after:to-cyan-400/10 after:opacity-0 after:group-hover/image:opacity-100 after:transition-opacity"

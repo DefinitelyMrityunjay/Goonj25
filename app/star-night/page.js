@@ -10,19 +10,23 @@ const StarNightPage = () => {
 
   const handleMouseMove = (e) => {
     if (!isScratching) return;
-    
+
     const rect = e.currentTarget.getBoundingClientRect();
     const x = ((e.clientX - rect.left) / rect.width) * 100;
     const y = ((e.clientY - rect.top) / rect.height) * 100;
     setMousePosition({ x, y });
-    
+
     const newPercentage = Math.min(revealedPercentage + 0.8, 100);
     setRevealedPercentage(newPercentage);
-    
+
     if (newPercentage >= 100 && !showFinalReveal) {
       setShowFinalReveal(true);
     }
   };
+
+  const close = () => {
+    setShowFinalReveal(false);
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-purple-900 to-black text-white p-4 mt-14">
@@ -38,7 +42,7 @@ const StarNightPage = () => {
 
       {/* Scratch Card */}
       <div className="max-w-2xl mx-auto bg-purple-900/20 p-8 rounded-xl backdrop-blur-sm">
-        <div 
+        <div
           className="relative h-64 bg-gray-900 rounded-lg cursor-pointer overflow-hidden"
           onMouseMove={handleMouseMove}
           onMouseDown={() => setIsScratching(true)}
@@ -56,13 +60,13 @@ const StarNightPage = () => {
           }}
         >
           {/* Scratch overlay */}
-          <div 
+          <div
             className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900"
             style={{
               maskImage: `radial-gradient(circle at ${mousePosition.x}% ${mousePosition.y}%, transparent ${revealedPercentage}%, black 100%)`
             }}
           />
-          
+
           {/* Instructions */}
           {revealedPercentage < 5 && (
             <div className="absolute inset-0 flex items-center justify-center animate-bounce">
@@ -72,16 +76,16 @@ const StarNightPage = () => {
               </div>
             </div>
           )}
-          
+
           {/* Hidden content */}
-          <div className="absolute inset-0 flex items-center justify-center">
+          <div className="absolute inset-0 flex items-center justify-center select-none">
             <div className="text-center">
               <p className="text-2xl font-bold mb-2">Mystery Guest</p>
               <p className="text-lg">Keep scratching to reveal!</p>
             </div>
           </div>
         </div>
-        
+
         {/* Progress bar */}
         <div className="mt-4">
           <div className="flex justify-between text-sm mb-2">
@@ -89,7 +93,7 @@ const StarNightPage = () => {
             <span>{revealedPercentage >= 100 ? 'Complete!' : 'Keep going!'}</span>
           </div>
           <div className="bg-gray-800 rounded-full h-2 overflow-hidden">
-            <div 
+            <div
               className="bg-gradient-to-r from-purple-500 to-pink-500 h-full rounded-full transition-all duration-300"
               style={{ width: `${revealedPercentage}%` }}
             />
@@ -111,6 +115,9 @@ const StarNightPage = () => {
             <p className="mt-4 text-lg text-gray-300">
               Get ready for an unforgettable night!
             </p>
+            <button onClick={close} className='mt-5 bg-purple-400 px-4 py-2 rounded-3xl'>
+              Close
+            </button>
           </div>
         </div>
       )}

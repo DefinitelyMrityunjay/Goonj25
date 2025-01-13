@@ -8,7 +8,7 @@ const AboutUs = () => {
         {
             id: 'uiet',
             title: 'About UIET',
-            image: '/UIET_logo.png',
+            image: '/Logos/UIET_logo.png',
             description: `University Institute of Engineering and Technology (UIET) is a premier engineering institute, established in 2002 as part of Panjab University. 
             It has emerged as a leading center for engineering education in North India, offering various undergraduate and postgraduate programs in engineering and technology.
             The institute focuses on holistic development through technical education, research opportunities, and vibrant campus life.`,
@@ -22,7 +22,7 @@ const AboutUs = () => {
         {
             id: 'pu',
             title: 'About Panjab University',
-            image: '/pu-logo.png',
+            image: '/Logos/pu-logo.png',
             description: `Panjab University is one of India's oldest universities, established in 1882. Located in Chandigarh, it has earned reputation for excellence in higher education and research.
             The university has produced numerous distinguished alumni who have made significant contributions in various fields including science, arts, politics, and industry.
             It continues to be a symbol of academic excellence and cultural heritage.`,
