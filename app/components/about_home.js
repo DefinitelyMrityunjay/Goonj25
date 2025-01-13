@@ -56,7 +56,7 @@ const AboutSection = () => {
           >
             <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
               <iframe width="100%" height="100%" src="https://www.youtube.com/embed/48SC6qk2MDY?si=I92cgUK-JRRNbPvE" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
-              <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-cyan-500/20 mix-blend-overlay" />
+              <div className="absolute bg-gradient-to-r from-orange-500/20 to-cyan-500/20 mix-blend-overlay" />
             </div>
           </motion.div>
 
