@@ -378,7 +378,7 @@ const Header = () => {
                 <div className="hidden md:block">
                     <Link href="https://uiet.puchd.ac.in/">
                         <Logo
-                            src="/UIET_logo.png"
+                            src="/Logos/UIET_logo.png"
                             alt="UIET Logo"
                             className="w-12 h-12 sm:w-16 sm:h-16"
                         />
@@ -393,7 +393,7 @@ const Header = () => {
 
                 <Link href="/">
                     <Logo
-                        src="/goonj.jpg"
+                        src="/Logos/GoonjLogo.png"
                         alt="Goonj Logo"
                         className="w-16 h-16 sm:w-20 sm:h-20"
                     />
@@ -408,7 +408,7 @@ const Header = () => {
                 <div className="hidden md:block">
                     <Link href="https://puchd.ac.in/">
                         <Logo
-                            src="/pu-logo.png"
+                            src="/Logos/pu-logo.png"
                             alt="PU Logo"
                             className="w-12 h-12 sm:w-16 sm:h-16"
                         />

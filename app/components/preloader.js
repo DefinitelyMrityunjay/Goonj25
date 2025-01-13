@@ -134,12 +134,12 @@ const Preloader = () => {
           className="relative mb-8"
         >
           <Image
-            src="/goonjlogow.png"
+            src="/Logos/goonjlogow.png"
             alt="Goonj Logo"
             width={150}
             height={150}
             className="relative z-10"
-            priority // Add priority to ensure early loading
+            priority
           />
         </motion.div>
 

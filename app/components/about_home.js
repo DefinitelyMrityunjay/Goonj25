@@ -41,7 +41,7 @@ const AboutSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">About Goonj 2025</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-orange-500 via-cyan-500 to-orange-500 mx-auto"/>
+          <div className="w-24 h-1 bg-gradient-to-r from-orange-500 via-cyan-500 to-orange-500 mx-auto" />
         </motion.div>
 
         {/* Content Grid */}
@@ -55,12 +55,7 @@ const AboutSection = () => {
             className="relative"
           >
             <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
-              <Image
-                src="/about-image.jpg"
-                alt="Goonj Festival"
-                fill
-                className="object-cover"
-              />
+              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/48SC6qk2MDY?si=I92cgUK-JRRNbPvE" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
               <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-cyan-500/20 mix-blend-overlay" />
             </div>
           </motion.div>
@@ -77,8 +72,8 @@ const AboutSection = () => {
               Theme: Connecting Cultures Through Technology
             </h3>
             <p className="text-lg text-gray-300">
-              Goonj 2025 celebrates the fusion of cultural heritage and technological innovation. 
-              Our festival brings together students from diverse backgrounds to showcase their talents, 
+              Goonj 2025 celebrates the fusion of cultural heritage and technological innovation.
+              Our festival brings together students from diverse backgrounds to showcase their talents,
               exchange ideas, and create meaningful connections.
             </p>
             <div className="grid grid-cols-2 gap-6 mt-8">
@@ -88,7 +83,7 @@ const AboutSection = () => {
               </div>
               <div className="text-center p-4 bg-white/5 rounded-lg backdrop-blur-sm">
                 <h4 className="text-3xl font-bold text-cyan-500 mb-2">5000+</h4>
-                <p className="text-gray-300">Participants</p>
+                <p className="text-gray-300">Attendees</p>
               </div>
             </div>
           </motion.div>
@@ -104,19 +99,19 @@ const AboutSection = () => {
         >
           {[
             {
-              title: "Cultural Events",
-              description: "Celebrate diversity through dance, music, and artistic performances.",
-              icon: "🎭"
+              title: "Cultural Extravaganza",
+              description: "Immerse yourself in the richness of culture with vibrant dance, soulful music, and artistic expressions.",
+              icon: "🎨"
             },
             {
-              title: "Technical Workshops",
-              description: "Learn from industry experts and enhance your technical skills.",
-              icon: "💻"
+              title: "Technical Adventures",
+              description: "Dive into cutting-edge technology through hands-on events and thrilling competitions.",
+              icon: "🛠️"
             },
             {
-              title: "Innovation Hub",
-              description: "Showcase your projects and compete with talented peers.",
-              icon: "🚀"
+              title: "Star Night",
+              description: "End your day with electrifying performances by renowned artists under the starry sky.",
+              icon: "🌟"
             }
           ].map((feature, index) => (
             <div

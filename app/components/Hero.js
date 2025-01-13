@@ -168,9 +168,9 @@ const Hero = ({ timeLeft }) => {
                             className="rounded-full"
                         >
                             <Image
-                                src="/goonjlogow.png"
-                                width={240}
-                                height={240}
+                                src="/Logos/goonjlogow.png"
+                                width={250}
+                                height={250}
                                 alt="Goonj Logo"
                                 priority
                                 className="relative z-10 transition-transform duration-300 group-hover:scale-110"

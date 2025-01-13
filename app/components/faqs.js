@@ -15,7 +15,7 @@ const FAQ = () => {
   const faqs = [
     {
       question: "What is Goonj 2025?",
-      answer: "Goonj 2025 is the annual Techno-Cultural fest of the University Institute of Engineering and Technology (UIET). It's a platform where technology meets culture, featuring various events, workshops, competitions, and performances.",
+      answer: "Goonj 2025 is the annual Techno-Cultural fest of the University Institute of Engineering and Technology (UIET). It's a platform where technology meets culture, featuring various events, competitions, and performances.",
       category: "general"
     },
     {
@@ -25,24 +25,29 @@ const FAQ = () => {
     },
     {
       question: "How can I register for Goonj 2025?",
-      answer: "Registration will open soon through our official website. You can register either as an individual participant or as a team, depending on the events you're interested in. Stay tuned to our social media channels for registration updates.",
+      answer: "Registration will open soon through our official website and Google Forms. You can register either as an individual participant or as a team, depending on the events you're interested in. Stay tuned to our social media channels for registration updates.",
       category: "registration"
     },
     {
       question: "What types of events can I participate in?",
-      answer: "Goonj 2025 offers a wide range of events including technical competitions, hackathons, cultural performances, workshops, gaming tournaments, and more. Detailed event categories and schedules will be announced closer to the date.",
+      answer: "Goonj 2025 offers a wide range of events including technical competitions, hackathons, cultural performances, gaming tournaments, and more. Detailed event categories and schedules will be announced closer to the date.",
       category: "events"
     },
     {
-      question: "Can first-year students participate?",
-      answer: "Absolutely! Goonj welcomes participants from all years of study. There are special events designed specifically for first-year students to encourage their participation.",
+      question: "Can outside students participate?",
+      answer: "Absolutely! Goonj is open to students from all over, offering an inclusive platform for talent and creativity. Check individual event details for specific participation guidelines.",
       category: "eligibility"
     },
     {
       question: "Are there any prizes for the winners?",
-      answer: "Yes, winners of various competitions will receive exciting prizes, including cash rewards, certificates, and sponsored gifts. The total prize pool for Goonj 2025 will be announced soon.",
+      answer: "Yes, winners will be rewarded with exciting prizes such as cash awards, trophies, certificates, and exclusive goodies from our sponsors.",
       category: "prizes"
     },
+    {
+      question: "Is there any entry fee to enter the campus?",
+      answer: "No, there is no entry fee to enter the campus. However, registration fees may apply for specific events.",
+      category: "entry"
+    }
   ];
 
   // Category definitions for filtering
@@ -54,6 +59,7 @@ const FAQ = () => {
     { id: 'events', label: 'Events' },
     { id: 'eligibility', label: 'Eligibility' },
     { id: 'prizes', label: 'Prizes' },
+    { id: 'entry', label: 'Entry' }
   ];
 
   useEffect(() => {
@@ -257,7 +263,7 @@ const FAQ = () => {
               href="mailto:contact@goonj2025.com"
               className="text-cyan-500 hover:text-cyan-400 font-medium transition-colors"
             >
-              contact@goonj2025.com
+              contact@goonjuiet.com
             </a>
           </motion.div>
         </motion.div>

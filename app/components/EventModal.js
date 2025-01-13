@@ -284,47 +284,6 @@ const EventModal = ({ isOpen, onClose, event }) => {
                                                     </motion.div>
                                                 ))}
                                             </motion.div>
-
-                                            {/* Register Button */}
-                                            <motion.div className="pt-4">
-                                                <motion.button
-                                                    className="w-full bg-gradient-to-r from-cyan-500 via-orange-500 to-cyan-500 text-white py-4 px-6 rounded-lg font-semibold relative overflow-hidden group"
-                                                    whileHover={{ scale: 1.02 }}
-                                                    whileTap={{ scale: 0.98 }}
-                                                    animate={{
-                                                        background: [
-                                                            "linear-gradient(90deg, rgb(6,182,212), rgb(255,165,0), rgb(6,182,212))",
-                                                            "linear-gradient(90deg, rgb(255,165,0), rgb(6,182,212), rgb(255,165,0))",
-                                                            "linear-gradient(90deg, rgb(6,182,212), rgb(255,165,0), rgb(6,182,212))"
-                                                        ]
-                                                    }}
-                                                    transition={{
-                                                        duration: 4,
-                                                        repeat: Infinity,
-                                                        ease: "linear"
-                                                    }}
-                                                >
-                                                    <motion.span
-                                                        className="absolute inset-0 bg-white/20"
-                                                        initial={{ x: "-100%" }}
-                                                        whileHover={{ x: "100%" }}
-                                                        transition={{
-                                                            type: "tween",
-                                                            duration: 0.5,
-                                                            ease: "easeInOut"
-                                                        }}
-                                                    />
-                                                    Register Now
-                                                    <motion.div
-                                                        className="absolute inset-0 rounded-lg"
-                                                        initial={{ boxShadow: "0 0 0 0 rgba(34,211,238,0)" }}
-                                                        whileHover={{
-                                                            boxShadow: "0 0 20px 2px rgba(34,211,238,0.3)"
-                                                        }}
-                                                        transition={{ duration: 0.3 }}
-                                                    />
-                                                </motion.button>
-                                            </motion.div>
                                         </motion.div>
                                     </div>
                                 </div>

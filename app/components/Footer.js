@@ -1,14 +1,13 @@
 "use client";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import Link from "next/link";
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaPhone, FaEnvelope, FaMapMarkerAlt, FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
   const socialLinks = [
     { icon: FaFacebookF, href: "https://www.facebook.com/uiet.goonj?mibextid=ZbWKwL", label: "Facebook" },
-    { icon: FaTwitter, href: "https://twitter.com", label: "Twitter" },
+    { icon: FaYoutube, href: "https://www.youtube.com/@goonjuietpu", label: "Youtube" },
     { icon: FaInstagram, href: "https://www.instagram.com/goonj.uietpu?igsh=MnlrOWlxNmh2Ym9o", label: "Instagram" },
-    { icon: FaLinkedinIn, href: "https://linkedin.com", label: "LinkedIn" },
   ];
 
   const quickLinks = [
@@ -21,8 +20,8 @@ const Footer = () => {
   ];
 
   const contactInfo = [
-    { icon: FaPhone, text: "+91 XXX XXX XXXX", href: "tel:+91XXXXXXXXXX" },
-    { icon: FaEnvelope, text: "contact@goonj25.com", href: "mailto:contact@goonj25.com" },
+    { icon: FaPhone, text: "+91 78892 31615", href: "tel:+917889231615" },
+    { icon: FaEnvelope, text: "contact@goonjuiet.com", href: "mailto:contact@goonjuiet.com" },
     { icon: FaMapMarkerAlt, text: "UIET, Panjab University, Chandigarh", href: "https://maps.google.com" },
   ];
 
@@ -410,7 +409,7 @@ const Footer = () => {
               © {new Date().getFullYear()} Goonj&apos;25. All Rights Reserved.
             </p>
             <p className="text-xs">
-              Designed with ❤ by UIET Students
+              Designed with ❤ by Web Team
             </p>
           </motion.div>
         </div>
