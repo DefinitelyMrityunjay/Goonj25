@@ -40,7 +40,7 @@ const Hero = ({ timeLeft }) => {
     }, []);
 
     return (
-        <main className="relative py-10 bg-gradient-to-b from-[#0D0221] via-[#150634] to-[#0D0221]">
+        <main className="relative bg-gradient-to-b from-[#0D0221] via-[#150634] to-[#0D0221]">
             {/* Enhanced SVG Patterns */}
             <svg className="absolute w-0 h-0 overflow-hidden">
                 <defs>
