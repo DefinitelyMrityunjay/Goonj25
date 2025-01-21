@@ -155,7 +155,7 @@ const galleryItems = [
         description: "Beautiful GOONJ.",
         type: "featured",
         src: "/Past_Gallery/Logo.jpg",
-        type:"wide"
+        type: "wide"
     },
     {
         id: 22,

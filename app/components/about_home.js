@@ -5,22 +5,6 @@ import Image from 'next/image';
 const AboutSection = () => {
   return (
     <div className="bg-[#0D0221] py-20 relative overflow-hidden">
-      <Image
-        src='/bg-texture/tree.svg'
-        width={400}
-        height={400}
-        priority={true}
-        className='absolute bottom-0 -left-32  opacity-50 pointer-events-none'
-        alt='tree'
-      />
-      <Image
-        src='/bg-texture/tree.svg'
-        width={400}
-        height={400}
-        priority={true}
-        className='absolute bottom-0 scale-x-[-1] -right-32 opacity-50 pointer-events-none'
-        alt='tree'
-      />
       {/* Background decorative elements */}
       <div className="absolute inset-0">
         <motion.div

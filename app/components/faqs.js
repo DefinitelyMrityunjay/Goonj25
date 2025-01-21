@@ -78,13 +78,6 @@ const FAQ = () => {
 
   return (
     <div className="bg-[#0D0221] py-20 relative overflow-hidden min-h-screen">
-      <Image
-        src='/bg-texture/peacock.svg'
-        width={10000}
-        height={500}
-        className='absolute bottom-0 right-0 opacity-50 pointer-events-none'
-        alt='peacock'
-      />
       {/* Gradient Background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-cyan-900/10 via-purple-900/10 to-indigo-900/10 animate-[pulse_10s_infinite]" />
