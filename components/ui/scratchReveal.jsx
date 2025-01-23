@@ -92,19 +92,22 @@ const ScratchToReveal = ({
   const handleTouchStart = () => setIsScratching(true);
 
   const scratch = (clientX, clientY) => {
-  const canvas = canvasRef.current;
-  const ctx = canvas?.getContext("2d");
-  if (canvas && ctx) {
-    const rect = canvas.getBoundingClientRect();
-    const x = clientX - rect.left;
-    const y = clientY - rect.top;
-    
-    ctx.globalCompositeOperation = "destination-out";
-    ctx.beginPath();
-    ctx.arc(x, y, 30, 0, Math.PI * 2);
-    ctx.fill();
-  }
-};
+    const canvas = canvasRef.current;
+    const ctx = canvas?.getContext("2d");
+    if (canvas && ctx) {
+      const rect = canvas.getBoundingClientRect();
+      const scaleX = canvas.width / rect.width;
+      const scaleY = canvas.height / rect.height; 
+      const x = (clientX - rect.left) * scaleX;
+      const y = (clientY - rect.top) * scaleY;
+  
+      ctx.globalCompositeOperation = "destination-out";
+      ctx.beginPath();
+      ctx.arc(x, y, 30, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  };
+  
 
   const checkCompletion = () => {
     if (isComplete) return;
