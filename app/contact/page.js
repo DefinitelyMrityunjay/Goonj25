@@ -1,9 +1,46 @@
 "use client"
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
+import { Phone } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle } from '../../components/ui/card';
 import { Instagram, Facebook, Twitter, Linkedin, Youtube } from 'lucide-react';
 
 const ContactPage = () => {
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 50 }, // Initial state: hidden and below
+    visible: { opacity: 1, y: 0 }, // Visible state: fully shown and at normal position
+  };
+
+  const hierarchyData = [
+    {
+      title: 'Our Conveners',
+      members: [
+        { name: 'Er. Harbinder Singh', role: 'Convener' , phone:'+91 7889231615' },
+        { name: 'Dr. Akashdeep Sharma', role: 'Co-Convener' , phone:'+91 7889231615' },
+      ],
+    },
+    {
+      title: 'Our Coordination Faculty',
+      members: [
+        { name: 'Prof A. P. Singh', role: 'Faculty'  , phone:'+91 7889231615' },
+        { name: 'Prof. Shuchi Gupta', role: 'Faculty' , phone:'+91 7889231615' },
+        { name: 'Er. Hema Setia', role: 'Faculty' , phone:'+91 7889231615' },
+        { name: 'Dr. Vivek Pahwa', role: 'Faculty' , phone:'+91 7889231615' },
+        { name: 'Dr. Sukhvir Singh', role: 'Faculty' , phone:'+91 7889231615' },
+      ],
+    },
+    {
+      title: 'Our Coordinators',
+      members: [
+        { name: 'Chakshush K Sharma', role: 'Goonj Coordinator', phone:'+91 7889231615' },
+        { name: 'Shivani Sahgal', role: 'Cultural Coordinator', phone:'+91 8303926514'},
+        { name: 'Mrityunjay Singh', role: 'Technical Coordinator', phone:'+91 9416027624'},
+        { name: 'Saksham Gupta', role: 'Financial Coordinator', phone:'+91 7018883576'},
+      ],
+    },
+  ];
   const [formState, setFormState] = useState({
     name: '',
     email: '',
@@ -11,9 +48,9 @@ const ContactPage = () => {
     message: ''
   });
 
+  const [scrambledTitles, setScrambledTitles] = useState({});
+
   const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission logic here
   };
 
   const inputClasses = "w-full bg-white/10 backdrop-blur-sm rounded-lg border border-orange-500/20 p-3 text-white placeholder:text-white/50 focus:outline-none focus:border-cyan-500/50 transition-colors";
@@ -62,7 +99,7 @@ const ContactPage = () => {
           className="max-w-4xl mx-auto"
         >
           <motion.h1
-            className="text-4xl md:text-5xl font-bold text-center text-orange-50 mb-8 relative inline-block"
+            className="text-4xl md:text-5xl font-bold text-center text-orange-50 mb-2 relative inline-block"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
           >
@@ -162,7 +199,7 @@ const ContactPage = () => {
                 <h3 className="text-xl text-white font-semibold mb-4">Contact Info</h3>
                 <div className="space-y-2 text-white/80">
                   <p>Email: contact@goonj.com</p>
-                  <p>Phone: +91 XXX XXX XXXX</p>
+                  <p>Phone: +91 78892 31615</p>
                 </div>
               </motion.div>
 
@@ -189,16 +226,6 @@ const ContactPage = () => {
                     icon={Facebook}
                     href="https://facebook.com/goonj"
                     label="Like us on Facebook"
-                  />
-                  <SocialIcon
-                    icon={Twitter}
-                    href="https://twitter.com/goonj"
-                    label="Follow us on Twitter"
-                  />
-                  <SocialIcon
-                    icon={Linkedin}
-                    href="https://linkedin.com/company/goonj"
-                    label="Connect with us on LinkedIn"
                   />
                   <SocialIcon
                     icon={Youtube}
@@ -239,6 +266,74 @@ const ContactPage = () => {
             }}
           />
         </div>
+        <div className="min-h-screen backdrop-blur-sm text-gray-200 overflow-x-hidden">
+      {/* Hero Section */}
+      <motion.div
+        className="relative pt-24 sm:pt-28  text-white pb-12 sm:pb-16"
+        initial="hidden"
+        animate="visible"
+      >
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center relative z-10  sm:mt-12">
+          <motion.h1
+            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-cyan-400 animate__animated animate__fadeIn"
+          >
+            MEET OUR TEAM
+          </motion.h1>
+          <motion.h2 className="text-xl sm:text-2xl font-semibold text-gray-300">
+            The Faces Behind Goonj
+          </motion.h2>
+        </div>
+        <div className="w-24 h-1 bg-gradient-to-r from-orange-500 via-cyan-500 to-orange-500 mx-auto mt-4" />
+      </motion.div>
+
+      {/* Main Content */}
+      <div className="max-w-8xl mx-auto px-4 sm:px-6 py-12">
+        {hierarchyData.map((section, sectionIdx) => (
+          <div key={sectionIdx} className="mt-8">
+            <h3 className="text-lg sm:text-3xl font-semibold text-orange-500 text-center mb-12">
+              {section.title}
+            </h3>
+            <div
+              className="flex gap-6 justify-center"
+            >
+              {section.members.map((member, idx) => (
+                <motion.div
+                  key={idx}
+                  className="w-[250px] h-[260px] text-center bg-black/20 backdrop-blur-sm h-full border border-orange-500/20 rounded-lg hover:bg-[#0D0221] transition-colors"
+                  variants={cardVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.5 }}
+                  transition={{ duration: 1.5, delay : member.delay}}
+                  whileHover={{ scale: 1.05 }}
+                >
+
+                  <Image
+                    src={`/members/${member.role}.png`}
+                    alt={`${member.name}`}
+                    width={100}
+                    height={100}
+                    className="rounded-full mx-auto mt-4"
+                  />
+                  <CardHeader className="pb-1">
+                    <CardTitle className="text-lg font-bold text-gray-100">
+                      {member.name}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-gray-400">{member.role}</p>
+                    <p className="flex items-center justify-center text-gray-400 py-3">
+                      <Phone className="mr-3 w-4 h-4" />
+                      <a href="tel:{member.phone}">{member.phone}</a>
+                    </p>
+                  </CardContent>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
       </div>
     </main>
   );
