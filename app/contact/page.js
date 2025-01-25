@@ -9,35 +9,35 @@ import { Instagram, Facebook, Twitter, Linkedin, Youtube } from 'lucide-react';
 const ContactPage = () => {
 
   const cardVariants = {
-    hidden: { opacity: 0, y: 50 }, // Initial state: hidden and below
-    visible: { opacity: 1, y: 0 }, // Visible state: fully shown and at normal position
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0 },
   };
 
   const hierarchyData = [
     {
       title: 'Our Conveners',
       members: [
-        { name: 'Er. Harbinder Singh', role: 'Convener' , phone:'+91 7889231615', src:'/Logos/Harbinder.jpg'},
-        { name: 'Dr. Akashdeep Sharma', role: 'Co-Convener' , phone:'+91 7889231615', src:'/Logos/Akash.jpg' },
+        { name: 'Er. Harbinder Singh', role: 'Convener', phone: '+91 9316103516', src: '/coordinators/Harbinder.jpg' },
+        { name: 'Dr. Akashdeep Sharma', role: 'Co-Convener', phone: '+91 XXXXXXXXXXX', src: '/coordinators/Akash.jpg' },
       ],
     },
     {
       title: 'Our Coordination Faculty',
       members: [
-        { name: 'Prof A. P. Singh', role: 'Faculty'  , phone:'+91 7889231615', src:'/Logos/Amrinder.jpg' },
-        { name: 'Prof. Shuchi Gupta', role: 'Faculty' , phone:'+91 7889231615', src:'/Logos/Suchi.jpg' },
-        { name: 'Er. Hema Setia', role: 'Faculty' , phone:'+91 7889231615', src:'/Logos/Suchi.jpg' },
-        { name: 'Dr. Vivek Pahwa', role: 'Faculty' , phone:'+91 7889231615', src:'/Logos/Vivek.jpg' },
-        { name: 'Dr. Sukhvir Singh', role: 'Faculty' , phone:'+91 7889231615', src:'/Logos/Sukhvir.jpg' },
+        { name: 'Prof A. P. Singh', role: 'Faculty', phone: '+91 XXXXXXXXXXX', src: '/coordinators/Amrinder.jpg' },
+        { name: 'Prof. Shuchi Gupta', role: 'Faculty', phone: '+91 8146066339', src: '/coordinators/Suchi.jpg' },
+        { name: 'Er. Hema Setia', role: 'Faculty', phone: '+91 XXXXXXXXXXX', src: '/coordinators/user.png' },
+        { name: 'Dr. Vivek Pahwa', role: 'Faculty', phone: '+91 XXXXXXXXXXX', src: '/coordinators/Vivek.jpg' },
+        { name: 'Dr. Sukhvir Singh', role: 'Faculty', phone: '+91 XXXXXXXXXXX', src: '/coordinators/Sukhvir.jpg' },
       ],
     },
     {
       title: 'Our Coordinators',
       members: [
-        { name: 'Chakshush K Sharma', role: 'Goonj Coordinator', phone:'+91 7889231615', src:'/Logos/Goonj Coordinator.png' },
-        { name: 'Shivani Sahgal', role: 'Cultural Coordinator', phone:'+91 8303926514', src:'/Logos/Cultural Coordinator.png'},
-        { name: 'Mrityunjay Singh', role: 'Technical Coordinator', phone:'+91 9416027624', src:'/Logos/Technical Coordinator.png'},
-        { name: 'Saksham Gupta', role: 'Financial Coordinator', phone:'+91 7018883576', src:'/Logos/Financial Coordinator.png'},
+        { name: 'Chakshush K Sharma', role: 'Goonj Coordinator', phone: '+91 7889231615', src: '/coordinators/Goonj Coordinator.png' },
+        { name: 'Shivani Sahgal', role: 'Cultural Coordinator', phone: '+91 8303926514', src: '/coordinators/Cultural Coordinator.png' },
+        { name: 'Mrityunjay Singh', role: 'Technical Coordinator', phone: '+91 9416027624', src: '/coordinators/Technical Coordinator.png' },
+        { name: 'Saksham Gupta', role: 'Financial Coordinator', phone: '+91 7018883576', src: '/coordinators/Financial Coordinator.png' },
       ],
     },
   ];
@@ -47,8 +47,6 @@ const ContactPage = () => {
     subject: '',
     message: ''
   });
-
-  const [scrambledTitles, setScrambledTitles] = useState({});
 
   const handleSubmit = (e) => {
   };
@@ -93,79 +91,79 @@ const ContactPage = () => {
 
       {/* Main Content */}
       <div className="relative z-10 container mx-auto px-4">
-        
+
         <div className="min-h-screen backdrop-blur-sm text-gray-200 overflow-x-hidden no-scrollbar">
-      {/* Hero Section */}
-      <motion.div
-        className="relative text-white pb-12 sm:pb-16"
-        initial="hidden"
-        animate="visible"
-      >
-        <div className="max-w-5xl mx-auto  text-center relative z-10 ">
-          <motion.h1
-            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-cyan-400 animate__animated animate__fadeIn"
+          {/* Hero Section */}
+          <motion.div
+            className="relative text-white pb-12 sm:pb-16"
+            initial="hidden"
+            animate="visible"
           >
-            MEET OUR TEAM
-          </motion.h1>
-          <motion.h2 className="text-xl sm:text-2xl font-semibold text-gray-300">
-            The Faces Behind Goonj
-          </motion.h2>
-        </div>
-        <div className="w-24 h-1 bg-gradient-to-r from-orange-500 via-cyan-500 to-orange-500 mx-auto mt-4" />
-      </motion.div>
-
-      {/* Main Content */}
-      <div className="max-w-8xl mx-auto  sm:px-6 ">
-        {hierarchyData.map((section, sectionIdx) => (
-          <div key={sectionIdx} className="mt-8">
-            <h3 className="text-lg sm:text-3xl font-semibold text-orange-500 text-center mb-12">
-              {section.title}
-            </h3>
-            <div
-              className="flex gap-6 justify-center"
-            >
-              {section.members.map((member, idx) => (
-                <motion.div
-                  key={idx}
-                  className="w-[250px] h-[260px] text-center bg-black/20 backdrop-blur-sm h-full border border-orange-500/20 rounded-lg hover:bg-[#0D0221] transition-colors"
-                  variants={cardVariants}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, amount: 0.5 }}
-                  transition={{ duration: 1.5, delay : member.delay}}
-                  whileHover={{ scale: 1.05 }}
-                >
-                    <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mt-4">
-                    <Image
-                    src={`${member.src}`}
-                    alt={`${member.name}`}
-                    width={96}
-                    height={96}
-                    className="object-cover"
-                  />
-                    </div>
-                  
-                  <CardHeader className="pb-1">
-                    <CardTitle className="text-lg font-bold text-gray-100">
-                      {member.name}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-gray-400">{member.role}</p>
-                    <p className="flex items-center justify-center text-gray-400 py-3">
-                      <Phone className="mr-3 w-4 h-4" />
-                      <a href="tel:{member.phone}">{member.phone}</a>
-                    </p>
-                  </CardContent>
-                </motion.div>
-              ))}
+            <div className="max-w-5xl mx-auto  text-center relative z-10 ">
+              <motion.h1
+                className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-cyan-400 animate__animated animate__fadeIn"
+              >
+                MEET OUR TEAM
+              </motion.h1>
+              <motion.h2 className="text-xl sm:text-2xl font-semibold text-gray-300">
+                The Faces Behind Goonj
+              </motion.h2>
             </div>
-          </div>
-        ))}
-      </div>
-    </div>
+            <div className="w-24 h-1 bg-gradient-to-r from-orange-500 via-cyan-500 to-orange-500 mx-auto mt-4" />
+          </motion.div>
 
-    <motion.div
+          {/* Main Content */}
+          <div className="max-w-8xl mx-auto  sm:px-6 ">
+            {hierarchyData.map((section, sectionIdx) => (
+              <div key={sectionIdx} className="mt-8">
+                <h3 className="text-lg sm:text-3xl font-semibold text-orange-500 text-center mb-12">
+                  {section.title}
+                </h3>
+                <div
+                  className="flex gap-6 justify-center"
+                >
+                  {section.members.map((member, idx) => (
+                    <motion.div
+                      key={idx}
+                      className="w-[250px] text-center bg-black/20 backdrop-blur-sm h-full border border-orange-500/20 rounded-lg hover:bg-[#0D0221] transition-colors"
+                      variants={cardVariants}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true, amount: 0.5 }}
+                      transition={{ duration: 1.5, delay: member.delay }}
+                      whileHover={{ scale: 1.05 }}
+                    >
+                      <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mt-4">
+                        <Image
+                          src={`${member.src}`}
+                          alt={`${member.name}`}
+                          width={96}
+                          height={96}
+                          className="object-cover"
+                        />
+                      </div>
+
+                      <CardHeader className="pb-1">
+                        <CardTitle className="text-lg font-bold text-gray-100">
+                          {member.name}
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <p className="text-gray-400">{member.role}</p>
+                        <p className="flex items-center justify-center text-gray-400 py-3">
+                          <Phone className="mr-3 w-4 h-4" />
+                          <a href="tel:{member.phone}">{member.phone}</a>
+                        </p>
+                      </CardContent>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <motion.div
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           className="max-w-4xl mx-auto pt-20"

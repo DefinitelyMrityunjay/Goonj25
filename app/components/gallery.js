@@ -120,120 +120,6 @@ const galleryItems = [
         type: "wide",
         src: "/Past_Gallery/solo-singing.jpg"
     },
-    {
-        id: 17,
-        title: "Blood Donation",
-        description: "A noble initiative for saving lives through blood donation camps.",
-        type: "featured",
-        src: "/Past_Gallery/blood-donation.jpg",
-        layout: "wide"
-    },
-    {
-        id: 18,
-        title: "Food Stalls",
-        description: "A delightful spread of cuisines offered by food stalls.",
-        type: "regular",
-        src: "/Past_Gallery/food-stalls.jpg"
-    },
-    {
-        id: 19,
-        title: "Kavi Sammelan",
-        description: "A mesmerizing evening of poetry and literary expressions.",
-        type: "regular",
-        src: "/Past_Gallery/kavi-sammelan.jpg"
-    },
-    {
-        id: 20,
-        title: "Marathon",
-        description: "A high-energy marathon marking the spirit of unity and health.",
-        type: "wide",
-        src: "/Past_Gallery/marathon.jpg"
-    },
-    {
-        id: 21,
-        title: "Logo",
-        description: "Beautiful GOONJ.",
-        type: "featured",
-        src: "/Past_Gallery/Logo.jpg",
-        type: "wide"
-    },
-    {
-        id: 22,
-        title: "Entrance Arch",
-        description: "A grand and welcoming entrance decorated with lights and banners.",
-        type: "regular",
-        src: "/Past_Gallery/entrance-arch.jpg"
-    },
-    {
-        id: 23,
-        title: "Photo Frames",
-        description: "Photo Frames for memorable photoframes",
-        type: "regular",
-        src: "/Past_Gallery/props.jpg"
-    },
-    {
-        id: 24,
-        title: "Main Stage Decorations",
-        description: "A vibrant and eye-catching setup for the central stage.",
-        type: "wide",
-        src: "/Past_Gallery/main-stage-decor.jpg"
-    },
-    {
-        id: 25,
-        title: "Friends Forever",
-        description: "A cheerful group of friends enjoying the event together.",
-        type: "wide",
-        src: "/Past_Gallery/friends-group-1.jpg"
-    },
-    {
-        id: 26,
-        title: "Solo Smile",
-        description: "A beautiful portrait capturing a student's joyful moment.",
-        type: "regular",
-        src: "/Past_Gallery/individual-portrait-1.jpg"
-    },
-    {
-        id: 27,
-        title: "Team Spirit",
-        description: "A lively group photo showcasing camaraderie.",
-        type: "wide",
-        src: "/Past_Gallery/team-spirit.jpg"
-    },
-    {
-        id: 28,
-        title: "Happy Faces",
-        description: "Friends posing with radiant smiles during the festivities.",
-        type: "regular",
-        src: "/Past_Gallery/friends-group-2.jpg"
-    },
-    {
-        id: 29,
-        title: "Bonding Moments",
-        description: "A small group sharing a moment together.",
-        type: "wide",
-        src: "/Past_Gallery/bonding-moments.jpg"
-    },
-    {
-        id: 30,
-        title: "Side Shot",
-        description: "A side shot of a student lost in the moment.",
-        type: "regular",
-        src: "/Past_Gallery/individual-portrait-2.jpg"
-    },
-    {
-        id: 31,
-        title: "Best Friends",
-        description: "Two friends sharing a joyful moment during the event.",
-        type: "wide",
-        src: "/Past_Gallery/two-friends-1.jpg"
-    },
-    {
-        id: 32,
-        title: "Radiant Individual",
-        description: "A bright and radiant portrait of a student.",
-        type: "regular",
-        src: "/Past_Gallery/individual-portrait-4.jpg",
-    }
 ];
 
 const BentoGallery = () => {
@@ -248,8 +134,6 @@ const BentoGallery = () => {
     const [userScrolling, setUserScrolling] = useState(false);
     const scrollTimeout = useRef(null);
     const lastScrollPosition = useRef(0);
-    const lastTime = useRef(performance.now());
-    const scrollVelocity = useRef(2); // Controls auto-scroll speed
 
     // Generate duplicate items with unique keys
     const generateDuplicateItems = (numSets) => {

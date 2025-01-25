@@ -8,7 +8,7 @@ import { useInView } from 'react-intersection-observer';
 const NavigationButton = ({ direction, onClick, isDisabled }) => (
     <motion.button
         onClick={onClick}
-        className={`group p-4 rounded-xl backdrop-blur-sm transition-all duration-300 pointer-events-auto border
+        className={`group p-4 rounded-xl backdrop-blur-sm z-50 transition-all duration-300 pointer-events-auto border
             ${isDisabled
                 ? 'bg-black/10 border-cyan-400/20'
                 : 'bg-black/20 border-cyan-400/30 hover:border-cyan-400/50'}`}
