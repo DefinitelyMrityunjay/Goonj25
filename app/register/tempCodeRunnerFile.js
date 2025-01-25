@@ -19,10 +19,7 @@ const COURSES = [
     'B.Tech - Computer Science',
     'B.Tech - Information Technology',
     'B.Tech - Electronics',
-    'B.Tech - Electrical',
-    'B.Tech - Aerospace',
     'B.Tech - Mechanical',
-    'B.Tech - Civil',
     'B.Tech - Biotechnology',
     'Other'
 ];
@@ -44,6 +41,10 @@ const VALIDATION_RULES = {
     college: { required: true, message: 'College name is required' },
     course: { required: true, message: 'Course is required' },
     year: { required: true, message: 'Year is required' },
+    transactionId: {
+        pattern: /^[a-zA-Z0-9-_]+$/,
+        message: 'Please enter a valid transaction ID'
+    }
 };
 
 const INITIAL_FORM_STATE = {
@@ -53,6 +54,37 @@ const INITIAL_FORM_STATE = {
     college: '',
     course: '',
     year: '',
+    events: [],
+    transactionId: '',
+    totalAmount: 0
+};
+
+const QrCodeModal = ({ isOpen, onClose }) => {
+    if (!isOpen) return null;
+
+    return (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+            <div className="bg-gray-900 p-6 rounded-lg relative">
+                <button
+                    onClick={onClose}
+                    className="absolute top-2 right-2 text-gray-400 hover:text-white"
+                >
+                    ×
+                </button>
+                <div className="text-center space-y-4">
+                    <h3 className="text-xl font-semibold">Scan to Pay</h3>
+                    <img
+                        src="/api/placeholder/200/200"
+                        alt="Payment QR Code"
+                        className="mx-auto"
+                    />
+                    <p className="text-sm text-gray-400">
+                        Scan this QR code to make the payment
+                    </p>
+                </div>
+            </div>
+        </div>
+    );
 };
 
 const RegistrationPage = () => {
@@ -60,6 +92,9 @@ const RegistrationPage = () => {
     const [errors, setErrors] = useState({});
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitStatus, setSubmitStatus] = useState(null);
+    const [selectedEvents, setSelectedEvents] = useState([]);
+    const [totalPrice, setTotalPrice] = useState(0);
+    const [showQrCode, setShowQrCode] = useState(false);
 
     const validateField = (name, value) => {
         const rules = VALIDATION_RULES[name];
@@ -85,6 +120,15 @@ const RegistrationPage = () => {
             const error = validateField(field, formData[field]);
             if (error) newErrors[field] = error;
         });
+
+        if (!selectedEvents?.length) {
+            newErrors.events = 'Please select at least one event';
+        }
+
+        if (totalPrice > 0 && !formData.transactionId?.trim()) {
+            newErrors.transactionId = 'Transaction ID is required for paid events';
+        }
+
         setErrors(newErrors);
         return Object.keys(newErrors).length === 0;
     };
@@ -99,6 +143,18 @@ const RegistrationPage = () => {
                 return newErrors;
             });
         }
+    };
+
+    const handleEventsSelect = (events, price) => {
+        if (!Array.isArray(events)) return;
+
+        setSelectedEvents(events);
+        setTotalPrice(price);
+        setFormData(prev => ({
+            ...prev,
+            events,
+            totalAmount: price
+        }));
     };
 
     const handleSubmit = async (e) => {
@@ -116,6 +172,13 @@ const RegistrationPage = () => {
         try {
             const registrationData = {
                 ...formData,
+                events: selectedEvents.map(event => ({
+                    id: String(event.id),
+                    name: String(event.name),
+                    price: Number(event.price),
+                    type: String(event.type)
+                })),
+                paymentStatus: formData.transactionId ? 'completed' : 'pending',
                 status: 'pending',
                 submittedAt: serverTimestamp(),
                 createdAt: serverTimestamp(),
@@ -343,6 +406,104 @@ const RegistrationPage = () => {
                                     </div>
                                 </div>
                             </div>
+
+                            {/* Event Selection Section */}
+                            <div className="space-y-2">
+                                <Label className="text-gray-300">Select Events</Label>
+                                <EventSelectionModal onEventsSelect={handleEventsSelect} />
+                                {selectedEvents.length > 0 && (
+                                    <motion.div
+                                        initial={{ opacity: 0, y: 10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        className="mt-4 p-4 rounded-lg bg-gray-800/80 border border-orange-900/50 text-gray-300"
+                                    >
+                                        <div className="flex justify-between items-center mb-2">
+                                            <span className="text-gray-300">Selected Events:</span>
+                                            <Badge variant="secondary" className="bg-cyan-900/50 text-cyan-300">
+                                                {selectedEvents.length} events
+                                            </Badge>
+                                        </div>
+
+                                        <div className="space-y-2">
+                                            {selectedEvents.map(event => (
+                                                <div key={event.id} className="flex justify-between items-center text-sm">
+                                                    <span className="text-gray-400">{event.name}</span>
+                                                    <span className="text-gray-300">₹{event.price}</span>
+                                                </div>
+                                            ))}
+                                            <Separator className="my-2 bg-orange-900/30" />
+                                            <div className="flex justify-between items-center font-medium">
+                                                <span className="text-gray-300">Total Amount:</span>
+                                                <span className="text-cyan-400">₹{totalPrice}</span>
+                                            </div>
+                                        </div>
+                                    </motion.div>
+                                )}
+                            </div>
+
+                            {/* Payment Section */}
+                            {selectedEvents.length > 0 && totalPrice > 0 && (
+                                <motion.div
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    className="space-y-4"
+                                >
+                                    <Separator className="my-6 bg-orange-900/30" />
+
+                                    <div className="space-y-4">
+                                        <div className="flex items-center justify-between">
+                                            <Label className="text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-cyan-400">
+                                                Payment Details
+                                            </Label>
+                                            <Button
+                                                type="button"
+                                                variant="ghost"
+                                                className="text-cyan-400 hover:text-cyan-300 hover:bg-cyan-400/10"
+                                                onClick={() => setShowQrCode(true)}
+                                            >
+                                                <QrCode className="w-4 h-4 mr-2" />
+                                                Show QR Code
+                                            </Button>
+                                        </div>
+
+                                        <div className="grid gap-6">
+                                            <div className="space-y-2">
+                                                <Label htmlFor="transactionId" className="text-gray-300">
+                                                    UPI Reference ID
+                                                    <span className="text-orange-400 ml-1">*</span>
+                                                </Label>
+                                                <Input
+                                                    id="transactionId"
+                                                    name="transactionId"
+                                                    value={formData.transactionId}
+                                                    onChange={handleInputChange}
+                                                    placeholder="Enter UPI Reference ID after payment"
+                                                    className="bg-gray-800/80 border-orange-900/50 text-gray-300"
+                                                />
+                                                {errors.transactionId && (
+                                                    <p className="text-sm text-red-400 flex items-center gap-1">
+                                                        <AlertCircle className="w-4 h-4" />
+                                                        {errors.transactionId}
+                                                    </p>
+                                                )}
+                                            </div>
+
+                                            <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg p-4 border border-orange-900/50">
+                                                <div className="flex justify-between items-center">
+                                                    <div className="space-y-1">
+                                                        <p className="text-gray-300 font-medium">Total Amount</p>
+                                                        <p className="text-sm text-gray-400">Including all event fees</p>
+                                                    </div>
+                                                    <p className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-cyan-400">
+                                                        ₹{totalPrice}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            )}
+
                             {/* Submit Button */}
                             <Button
                                 type="submit"
@@ -380,6 +541,10 @@ const RegistrationPage = () => {
                         </form>
                     </CardContent>
                 </Card>
+
+                {/* QR Code Modal */}
+                <QrCodeModal isOpen={showQrCode} onClose={() => setShowQrCode(false)} />
+                {/* Add these sections right before closing the main motion.div in RegistrationPage */}
 
                 {/* Top Left Corner - Paisley Pattern */}
                 <div className="absolute -top-4 -left-4 w-24 sm:w-32 h-24 sm:h-32 pointer-events-none">

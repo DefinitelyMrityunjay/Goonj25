@@ -36,7 +36,7 @@ const AboutUs = () => {
         {
             id: 'goonj',
             title: 'About Goonj',
-            image: '/goonj.jpg',
+            image: '/Logos/About-Us Logo.png',
             description: `Goonj is UIET's flagship annual techno-cultural festival that brings together talent, creativity, and innovation. 
             It serves as a platform for students to showcase their technical prowess and cultural talents through various competitions, workshops, and performances.
             The festival embodies the spirit of engineering and artistry, fostering a vibrant community of future innovators and leaders.`,

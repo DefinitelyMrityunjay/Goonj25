@@ -150,7 +150,7 @@ const Preloader = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
         >
-          <span className="font-devanagari">गूँज</span> २०२५
+          <span className="font-devanagari">गूँज</span> 2025
         </motion.h2>
 
         {/* Loading Bar */}
