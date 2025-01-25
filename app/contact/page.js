@@ -309,7 +309,7 @@ const ContactPage = () => {
                 >
 
                   <Image
-                    src={`/members/${member.role}.png`}
+                    src={`/logos/${member.role}.png`}
                     alt={`${member.name}`}
                     width={100}
                     height={100}
