@@ -17,7 +17,7 @@ const ContactPage = () => {
     {
       title: 'Our Conveners',
       members: [
-        { name: 'Er. Harbinder Singh', role: 'Convener', phone: '+91 9316103516', src: '/coordinators/Harbinder.jpg' },
+        { name: 'Er. Harbinder Singh', role: 'Convener', phone: '+91 9316103516', src: '/coordinators/harbinder.jpg' },
         { name: 'Dr. Akashdeep Sharma', role: 'Co-Convener', phone: '+91 XXXXXXXXXXX', src: '/coordinators/Akash.jpg' },
       ],
     },
