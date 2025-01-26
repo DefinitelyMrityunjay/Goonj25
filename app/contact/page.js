@@ -17,27 +17,27 @@ const ContactPage = () => {
     {
       title: 'Our Conveners',
       members: [
-        { name: 'Er. Harbinder Singh', role: 'Convener', phone: '+91 9316103516', src: '/coordinators/harbinder.jpg' },
-        { name: 'Dr. Akashdeep Sharma', role: 'Co-Convener', phone: '+91 XXXXXXXXXXX', src: '/coordinators/Akash.jpg' },
+        { name: 'Er. Harbinder Singh', role: 'Convener' , phone:'+91 7889231615', src:'/Logos/Harbinder.jpg'},
+        { name: 'Dr. Akashdeep Sharma', role: 'Co-Convener' , phone:'+91 7889231615', src:'/Logos/Akash.jpg' },
       ],
     },
     {
       title: 'Our Coordination Faculty',
       members: [
-        { name: 'Prof A. P. Singh', role: 'Faculty', phone: '+91 XXXXXXXXXXX', src: '/coordinators/Amrinder.jpg' },
-        { name: 'Prof. Shuchi Gupta', role: 'Faculty', phone: '+91 8146066339', src: '/coordinators/Suchi.jpg' },
-        { name: 'Er. Hema Setia', role: 'Faculty', phone: '+91 XXXXXXXXXXX', src: '/coordinators/user.png' },
-        { name: 'Dr. Vivek Pahwa', role: 'Faculty', phone: '+91 XXXXXXXXXXX', src: '/coordinators/Vivek.jpg' },
-        { name: 'Dr. Sukhvir Singh', role: 'Faculty', phone: '+91 XXXXXXXXXXX', src: '/coordinators/Sukhvir.jpg' },
+        { name: 'Prof A. P. Singh', role: 'Faculty'  , phone:'+91 7889231615', src:'/Logos/Amrinder.jpg' },
+        { name: 'Prof. Shuchi Gupta', role: 'Faculty' , phone:'+91 7889231615', src:'/Logos/Suchi.jpg' },
+        { name: 'Er. Hema Setia', role: 'Faculty' , phone:'+91 7889231615', src:'/Logos/Suchi.jpg' },
+        { name: 'Dr. Vivek Pahwa', role: 'Faculty' , phone:'+91 7889231615', src:'/Logos/Vivek.jpg' },
+        { name: 'Dr. Sukhvir Singh', role: 'Faculty' , phone:'+91 7889231615', src:'/Logos/Sukhvir.jpg' },
       ],
     },
     {
       title: 'Our Coordinators',
       members: [
-        { name: 'Chakshush K Sharma', role: 'Goonj Coordinator', phone: '+91 7889231615', src: '/coordinators/Goonj Coordinator.png' },
-        { name: 'Shivani Sahgal', role: 'Cultural Coordinator', phone: '+91 8303926514', src: '/coordinators/Cultural Coordinator.png' },
-        { name: 'Mrityunjay Singh', role: 'Technical Coordinator', phone: '+91 9416027624', src: '/coordinators/Technical Coordinator.png' },
-        { name: 'Saksham Gupta', role: 'Financial Coordinator', phone: '+91 7018883576', src: '/coordinators/Financial Coordinator.png' },
+        { name: 'Chakshush K Sharma', role: 'Goonj Coordinator', phone:'+91 7889231615', src:'/Logos/Goonj Coordinator.png' },
+        { name: 'Shivani Sahgal', role: 'Cultural Coordinator', phone:'+91 8303926514', src:'/Logos/Cultural Coordinator.png'},
+        { name: 'Mrityunjay Singh', role: 'Technical Coordinator', phone:'+91 9416027624', src:'/Logos/Technical Coordinator.png'},
+        { name: 'Saksham Gupta', role: 'Financial Coordinator', phone:'+91 7018883576', src:'/Logos/Financial Coordinator.png'},
       ],
     },
   ];
@@ -69,7 +69,6 @@ const ContactPage = () => {
 
   return (
     <main className="relative bg-[#0D0221] py-48 min-h-screen flex flex-col justify-center">
-      {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#0D0221] via-[#1A0F1F] to-[#0D0221] opacity-50" />
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-[#FFA500]/5 mix-blend-overlay" />
@@ -89,17 +88,14 @@ const ContactPage = () => {
         />
       </div>
 
-      {/* Main Content */}
       <div className="relative z-10 container mx-auto px-4">
-
         <div className="min-h-screen backdrop-blur-sm text-gray-200 overflow-x-hidden no-scrollbar">
-          {/* Hero Section */}
           <motion.div
             className="relative text-white pb-12 sm:pb-16"
             initial="hidden"
             animate="visible"
           >
-            <div className="max-w-5xl mx-auto  text-center relative z-10 ">
+            <div className="w-full text-center relative z-10">
               <motion.h1
                 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-cyan-400 animate__animated animate__fadeIn"
               >
@@ -112,25 +108,22 @@ const ContactPage = () => {
             <div className="w-24 h-1 bg-gradient-to-r from-orange-500 via-cyan-500 to-orange-500 mx-auto mt-4" />
           </motion.div>
 
-          {/* Main Content */}
-          <div className="max-w-8xl mx-auto  sm:px-6 ">
+          <div className="w-full sm:px-6">
             {hierarchyData.map((section, sectionIdx) => (
               <div key={sectionIdx} className="mt-8">
                 <h3 className="text-lg sm:text-3xl font-semibold text-orange-500 text-center mb-12">
                   {section.title}
                 </h3>
-                <div
-                  className="flex gap-6 justify-center"
-                >
+                <div className="flex flex-col sm:flex-row gap-6 justify-center">
                   {section.members.map((member, idx) => (
                     <motion.div
                       key={idx}
-                      className="w-[250px] text-center bg-black/20 backdrop-blur-sm h-full border border-orange-500/20 rounded-lg hover:bg-[#0D0221] transition-colors"
+                      className="w-full sm:w-[250px] h-[260px] text-center bg-black/20 backdrop-blur-sm h-full border border-orange-500/20 rounded-lg hover:bg-[#0D0221] transition-colors"
                       variants={cardVariants}
                       initial="hidden"
                       whileInView="visible"
                       viewport={{ once: true, amount: 0.5 }}
-                      transition={{ duration: 1.5, delay: member.delay }}
+                      transition={{ duration: 1.5, delay : member.delay}}
                       whileHover={{ scale: 1.05 }}
                     >
                       <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mt-4">
@@ -142,7 +135,6 @@ const ContactPage = () => {
                           className="object-cover"
                         />
                       </div>
-
                       <CardHeader className="pb-1">
                         <CardTitle className="text-lg font-bold text-gray-100">
                           {member.name}
@@ -152,7 +144,7 @@ const ContactPage = () => {
                         <p className="text-gray-400">{member.role}</p>
                         <p className="flex items-center justify-center text-gray-400 py-3">
                           <Phone className="mr-3 w-4 h-4" />
-                          <a href="tel:{member.phone}">{member.phone}</a>
+                          <a href={`tel:${member.phone}`}>{member.phone}</a>
                         </p>
                       </CardContent>
                     </motion.div>
@@ -188,7 +180,6 @@ const ContactPage = () => {
             transition={{ delay: 0.3 }}
             className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 pt-10"
           >
-            {/* Contact Form */}
             <motion.form
               initial={{ x: 50, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
@@ -242,7 +233,6 @@ const ContactPage = () => {
               </motion.button>
             </motion.form>
 
-            {/* Contact Info */}
             <div className="space-y-6">
               <motion.div
                 initial={{ x: -50, opacity: 0 }}
@@ -273,7 +263,6 @@ const ContactPage = () => {
                 </div>
               </motion.div>
 
-              {/* Social Media Section */}
               <motion.div
                 initial={{ x: -50, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
@@ -308,7 +297,6 @@ const ContactPage = () => {
           </motion.div>
         </motion.div>
 
-        {/* Decorative Corner Elements */}
         <div className="absolute top-0 left-0 w-20 h-20">
           <motion.div
             className="absolute inset-0 border-t-2 border-l-2 border-orange-500/30"
