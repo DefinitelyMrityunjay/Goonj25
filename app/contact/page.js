@@ -1,10 +1,10 @@
 "use client"
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { Phone } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '../../components/ui/card';
-import { Instagram, Facebook, Twitter, Linkedin, Youtube } from 'lucide-react';
+import { Instagram, Facebook, Youtube } from 'lucide-react';
 
 const ContactPage = () => {
 
@@ -17,27 +17,27 @@ const ContactPage = () => {
     {
       title: 'Our Conveners',
       members: [
-        { name: 'Er. Harbinder Singh', role: 'Convener' , phone:'+91 7889231615', src:'/Logos/Harbinder.jpg'},
-        { name: 'Dr. Akashdeep Sharma', role: 'Co-Convener' , phone:'+91 7889231615', src:'/Logos/Akash.jpg' },
+        { name: 'Er. Harbinder Singh', role: 'Convener', phone: '+91 9316103516', src: '/coordinators/harbinder.jpg' },
+        { name: 'Dr. Akashdeep Sharma', role: 'Co-Convener', phone: '+91 XXXXXXXXXXX', src: '/coordinators/Akash.jpg' },
       ],
     },
     {
       title: 'Our Coordination Faculty',
       members: [
-        { name: 'Prof A. P. Singh', role: 'Faculty'  , phone:'+91 7889231615', src:'/Logos/Amrinder.jpg' },
-        { name: 'Prof. Shuchi Gupta', role: 'Faculty' , phone:'+91 7889231615', src:'/Logos/Suchi.jpg' },
-        { name: 'Er. Hema Setia', role: 'Faculty' , phone:'+91 7889231615', src:'/Logos/Suchi.jpg' },
-        { name: 'Dr. Vivek Pahwa', role: 'Faculty' , phone:'+91 7889231615', src:'/Logos/Vivek.jpg' },
-        { name: 'Dr. Sukhvir Singh', role: 'Faculty' , phone:'+91 7889231615', src:'/Logos/Sukhvir.jpg' },
+        { name: 'Prof A. P. Singh', role: 'Faculty', phone: '+91 XXXXXXXXXXX', src: '/coordinators/Amrinder.jpg' },
+        { name: 'Prof. Shuchi Gupta', role: 'Faculty', phone: '+91 8146066339', src: '/coordinators/Suchi.jpg' },
+        { name: 'Er. Hema Setia', role: 'Faculty', phone: '+91 XXXXXXXXXXX', src: '/coordinators/user.png' },
+        { name: 'Dr. Vivek Pahwa', role: 'Faculty', phone: '+91 XXXXXXXXXXX', src: '/coordinators/Vivek.jpg' },
+        { name: 'Dr. Sukhvir Singh', role: 'Faculty', phone: '+91 XXXXXXXXXXX', src: '/coordinators/Sukhvir.jpg' },
       ],
     },
     {
       title: 'Our Coordinators',
       members: [
-        { name: 'Chakshush K Sharma', role: 'Goonj Coordinator', phone:'+91 7889231615', src:'/Logos/Goonj Coordinator.png' },
-        { name: 'Shivani Sahgal', role: 'Cultural Coordinator', phone:'+91 8303926514', src:'/Logos/Cultural Coordinator.png'},
-        { name: 'Mrityunjay Singh', role: 'Technical Coordinator', phone:'+91 9416027624', src:'/Logos/Technical Coordinator.png'},
-        { name: 'Saksham Gupta', role: 'Financial Coordinator', phone:'+91 7018883576', src:'/Logos/Financial Coordinator.png'},
+        { name: 'Chakshush K Sharma', role: 'Goonj Coordinator', phone: '+91 7889231615', src: '/coordinators/Goonj Coordinator.png' },
+        { name: 'Shivani Sahgal', role: 'Cultural Coordinator', phone: '+91 8303926514', src: '/coordinators/Cultural Coordinator.png' },
+        { name: 'Mrityunjay Singh', role: 'Technical Coordinator', phone: '+91 9416027624', src: '/coordinators/Technical Coordinator.png' },
+        { name: 'Saksham Gupta', role: 'Financial Coordinator', phone: '+91 7018883576', src: '/coordinators/Financial Coordinator.png' },
       ],
     },
   ];
@@ -123,7 +123,7 @@ const ContactPage = () => {
                       initial="hidden"
                       whileInView="visible"
                       viewport={{ once: true, amount: 0.5 }}
-                      transition={{ duration: 1.5, delay : member.delay}}
+                      transition={{ duration: 1.5, delay: member.delay }}
                       whileHover={{ scale: 1.05 }}
                     >
                       <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mt-4">
@@ -258,8 +258,8 @@ const ContactPage = () => {
               >
                 <h3 className="text-xl text-white font-semibold mb-4">Contact Info</h3>
                 <div className="space-y-2 text-white/80">
-                  <p>Email: contact@goonj.com</p>
-                  <p>Phone: +91 78892 31615</p>
+                  <div>Email: <a href="mailto:contact@goonj.com"> contact@goonj.com </a></div>
+                  <div>divhone: <a href="tel:7889231615">+91 78892 31615</a></div>
                 </div>
               </motion.div>
 
