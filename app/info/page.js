@@ -47,7 +47,7 @@ export default function BrochuresPage() {
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("scroll", handleScroll);
-      document.removeEventListener("mousedown", handleClickOutside);
+      // document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
 
@@ -105,7 +105,7 @@ export default function BrochuresPage() {
     {
       title: "Technical Brochure",
       description:
-        "Deep dive into our technical specifications, innovative solutions, and engineering excellence.",
+        "Dive into our technical specifications, innovative solutions, and engineering excellence.",
       icon: Code,
       color: "from-blue-600 to-cyan-600",
       link: "../public/brochures/marketing-brochure.pdf",
@@ -114,7 +114,7 @@ export default function BrochuresPage() {
     {
       title: "Cultural Brochure",
       description:
-        "Discover our company culture, core values, and the vibrant community that drives our success.",
+        "Discover our culture, core values, and the vibrant community that drives our success.",
       icon: Users,
       color: "from-purple-600 to-indigo-600",
       link: "../public/brochures/marketing-brochure.pdf",
