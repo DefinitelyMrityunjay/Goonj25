@@ -13,6 +13,17 @@ const SponserCTA = () => {
     }
   };
 
+  const handleDownload = (e) => {
+    e.stopPropagation();
+    // console.log(`Downloading ${brochure.title}...`);
+    const link = document.createElement("a");
+    link.href = "brochures/marketing_brochure_2025.pdf";
+    link.download = `Marketing Brochure GOONJ 2025.pdf`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <motion.div
       className="mt-8 md:mt-16 lg:mt-20"
@@ -122,7 +133,9 @@ const SponserCTA = () => {
                 whileTap={{ scale: 0.95 }}
                 className="inline-block"
               >
-                <Button className="relative bg-gradient-to-r from-orange-500 to-cyan-500 text-white font-semibold px-4 sm:px-6 md:px-8 py-4 md:py-6 rounded-lg group overflow-hidden">
+                <Button className="relative bg-gradient-to-r from-orange-500 to-cyan-500 text-white font-semibold px-4 sm:px-6 md:px-8 py-4 md:py-6 rounded-lg group overflow-hidden"
+                onClick={(e) => handleDownload(e)}
+                >
                   {/* Button Glow Effect */}
                   <motion.div
                     className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent"
