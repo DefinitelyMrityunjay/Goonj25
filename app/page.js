@@ -1,5 +1,5 @@
 "use client"
-import React, { useState, useEffect, memo } from 'react';
+import React, { useState, useEffect, memo, Suspense } from 'react';
 import Hero from './components/Hero';
 import FAQ from './components/faqs';
 import Preloader from './components/preloader';
@@ -9,7 +9,7 @@ import EventsSection from './components/Events-carousel';
 import GlimpseTimeline from './components/glimpse-timeline';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ArrowUpCircle } from 'lucide-react';
-import BentoGallery from './components/gallery';
+const BentoGallery = React.lazy(() => import("./components/gallery"))
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
@@ -108,7 +108,9 @@ const Home = () => {
 
       {/* Gallery Section */}
       <section id="gallery" className="relative z-40">
-        <BentoGallery />
+        <Suspense fallback={<p>This is loading...</p>}>
+          <BentoGallery />
+        </Suspense>
       </section>
 
       {/* Glimpse Timeline Section */}

@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useRef } from "react";
 import { motion, AnimatePresence, useScroll } from "framer-motion";
-import { CircuitBoard, Cpu, QrCode, Hexagon, ChevronDown } from "lucide-react";
+import { CircuitBoard, Cpu, QrCode, ChevronDown } from "lucide-react";
 import Timeline from "./Timeline";
 
 const TimelineEvent = ({
@@ -195,72 +195,45 @@ const GlimpseTimeline = () => {
 
   const timelineEvents = [
     {
-      year: 2020,
-      title: "Digital Inception",
+      year: 2021,
+      title: "Bollywood Bash",
       description:
-        "In the wake of global challenges, Goonj emerged as a beacon of digital innovation, transforming the traditional tech fest into a virtual experience that connected minds across boundaries.",
+        "The true essence of a society is reflected through its culture and festivals. Bollywood Bash, held on the 2nd, 3rd, and 4th of March, was a thrilling and vibrant experience with an enchanting Bollywood theme.",
       highlights: [
-        "First fully online tech fest",
-        "100+ virtual participants",
-        "Innovative digital networking platforms",
+        "Goonj made a grand return after 3 years",
+        "Night of laughter by comedian Vaibhav Arora",
+        "Captivating performance by Gurnam Bhullar",
       ],
-      achievements: [
-        "Developed proprietary virtual event platform",
-        "Successful international collaborations",
-        "Recognized for digital innovation",
-      ],
+      achievements: ["9,000+ Attendees", "30+ Events"],
       icon: QrCode,
     },
     {
-      year: 2021,
-      title: "Hybrid Revolution",
+      year: 2022,
+      title: "Yugantar",
       description:
-        "Breaking barriers between physical and digital realms, we pioneered a hybrid event model that redefined technological and cultural engagement.",
+        "A celebration of time—Past⏳, Present, and Future⌛—Yugantar fused technology and culture into a high-energy, passion-filled extravaganza.",
       highlights: [
-        "Hybrid event format introduced",
-        "International speaker series",
-        "Expanded digital infrastructure",
+        "Goonj was transformed into a Techno-Cultural Fest",
+        "star performance by Kulwinder Billa",
+        "Evening of joy with comedian Parvinder Singh",
       ],
-      achievements: [
-        "Implemented AR/VR technologies",
-        "Expanded global participant base",
-        "Developed adaptive event technologies",
-      ],
+      achievements: ["15,000+ Attendees", "50+ Events"],
       icon: CircuitBoard,
     },
     {
-      year: 2022,
-      title: "Tech Cultural Fusion",
-      description:
-        "A transformative year where cutting-edge technology met traditional cultural narratives, creating a unique ecosystem of innovation and heritage.",
-      highlights: [
-        "AI-powered cultural workshops",
-        "500+ participants",
-        "Innovative tech competitions",
-      ],
-      achievements: [
-        "Launched AI-driven cultural insights platform",
-        "Created cross-cultural tech initiatives",
-        "Expanded international partnerships",
-      ],
-      icon: Cpu,
-    },
-    {
       year: 2023,
-      title: "Global Connected",
+      title: "Techkriti",
       description:
         "Reaching unprecedented heights with global collaborations, groundbreaking technological showcases, and a vision that transcends traditional boundaries.",
       highlights: [
-        "International university partnerships",
-        "Advanced AR/VR experiences",
-        "Sustainability tech innovations",
+        "Stay tuned for the star attraction!",
+        "Details of comedian to be revealed soon!",
       ],
       achievements: [
-        "Global innovation summit",
-        "Sustainable technology showcase",
-        "Quantum computing workshops",
+        "20,000+ Expected Attendees",
+        "60+ Exciting Events",
       ],
-      icon: Hexagon,
+      icon: Cpu,
     },
   ];
   return (
@@ -300,7 +273,7 @@ const GlimpseTimeline = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg md:text-xl text-gray-300"
           >
-            The Evolution of DigitalDharma
+            The Evolution of our Goonj
           </motion.p>
           <motion.div
             initial={{ scaleX: 0 }}
