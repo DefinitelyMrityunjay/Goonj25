@@ -99,7 +99,7 @@ export default function BrochuresPage() {
         "Explore our marketing strategies and success stories that have shaped our brand journey.",
       icon: Book,
       color: "from-pink-600 to-rose-600",
-      link: "../public/brochures/marketing-brochure.pdf",
+      link: "brochures/marketing_brochure_2025.pdf",
       stats: { pages: 25, downloads: "2.1k", lastUpdated: "2025" },
     },
     {
@@ -108,7 +108,7 @@ export default function BrochuresPage() {
         "Dive into our technical specifications, innovative solutions, and engineering excellence.",
       icon: Code,
       color: "from-blue-600 to-cyan-600",
-      link: "../public/brochures/marketing-brochure.pdf",
+      link: "brochures/marketing_brochure_2025.pdf",
       stats: { pages: 25, downloads: "3.4k", lastUpdated: "2025" },
     },
     {
@@ -117,7 +117,7 @@ export default function BrochuresPage() {
         "Discover our culture, core values, and the vibrant community that drives our success.",
       icon: Users,
       color: "from-purple-600 to-indigo-600",
-      link: "../public/brochures/marketing-brochure.pdf",
+      link: "brochures/marketing_brochure_2025.pdf",
       stats: { pages: 25, downloads: "1.8k", lastUpdated: "2025" },
     },
   ];
