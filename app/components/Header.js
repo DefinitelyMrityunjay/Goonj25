@@ -393,7 +393,7 @@ const Header = () => {
 
                 <Link href="/">
                     <Logo
-                        src="/Logos/GoonjLogo.png"
+                        src="https://res.cloudinary.com/dalvl67sv/image/upload/v1737921423/Logos/inmbkfoyesdg3iucjopy.png"
                         alt="Goonj Logo"
                         className="w-16 h-16 sm:w-20 sm:h-20"
                     />

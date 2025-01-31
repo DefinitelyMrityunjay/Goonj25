@@ -134,7 +134,7 @@ const Preloader = () => {
           className="relative mb-8"
         >
           <Image
-            src="/Logos/goonjlogow.png"
+            src="https://res.cloudinary.com/dalvl67sv/image/upload/v1737921424/Logos/okmfxawqsdvm8p4ge3nq.png"
             alt="Goonj Logo"
             width={150}
             height={150}

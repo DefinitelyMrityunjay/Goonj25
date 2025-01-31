@@ -17,27 +17,27 @@ const ContactPage = () => {
     {
       title: 'Our Conveners',
       members: [
-        { name: 'Er. Harbinder Singh', role: 'Convener', phone: '+91 9316103516', src: '/coordinators/harbinder.jpg' },
-        { name: 'Dr. Akashdeep Sharma', role: 'Co-Convener', phone: '+91 XXXXXXXXXXX', src: '/coordinators/Akash.jpg' },
+        { name: 'Er. Harbinder Singh', role: 'Convener', phone: '+91 9316103516', src: 'https://res.cloudinary.com/dalvl67sv/image/upload/v1737921494/Coordinators/df6pfvkkeinetewstcgm.png' },
+        { name: 'Dr. Akashdeep Sharma', role: 'Co-Convener', phone: '+91 9814925790', src: 'https://res.cloudinary.com/dalvl67sv/image/upload/v1737921493/Coordinators/vwf7e6dfqhd3uk7vnvyf.jpg' },
       ],
     },
     {
       title: 'Our Coordination Faculty',
       members: [
-        { name: 'Prof A. P. Singh', role: 'Faculty', phone: '+91 XXXXXXXXXXX', src: '/coordinators/Amrinder.jpg' },
-        { name: 'Prof. Shuchi Gupta', role: 'Faculty', phone: '+91 8146066339', src: '/coordinators/Suchi.jpg' },
-        { name: 'Er. Hema Setia', role: 'Faculty', phone: '+91 XXXXXXXXXXX', src: '/coordinators/user.png' },
-        { name: 'Dr. Vivek Pahwa', role: 'Faculty', phone: '+91 XXXXXXXXXXX', src: '/coordinators/Vivek.jpg' },
-        { name: 'Dr. Sukhvir Singh', role: 'Faculty', phone: '+91 XXXXXXXXXXX', src: '/coordinators/Sukhvir.jpg' },
+        { name: 'Prof A. P. Singh', role: 'Faculty', phone: '+91 9501010029', src: 'https://res.cloudinary.com/dalvl67sv/image/upload/v1737921493/Coordinators/ljjcp2jc7rmttrahi4yp.jpg' },
+        { name: 'Prof. Shuchi Gupta', role: 'Faculty', phone: '+91 8146066339', src: 'https://res.cloudinary.com/dalvl67sv/image/upload/v1737921495/Coordinators/jr8dgdddotquvsrnm4ux.jpg' },
+        { name: 'Er. Hema Setia', role: 'Faculty', phone: '+91 XXXXXXXXXXX', src: 'https://res.cloudinary.com/dalvl67sv/image/upload/v1737921495/Coordinators/qq6bz0onaqxxttzqfgrc.png' },
+        { name: 'Dr. Vivek Pahwa', role: 'Faculty', phone: '+91 7015370887', src: 'https://res.cloudinary.com/dalvl67sv/image/upload/v1737921496/Coordinators/wmw5twnx1qseegkwttrm.jpg' },
+        { name: 'Dr. Sukhvir Singh', role: 'Faculty', phone: '+91 8558874156', src: 'https://res.cloudinary.com/dalvl67sv/image/upload/v1737921495/Coordinators/xzc6hcvmjri5s63agt7d.jpg' },
       ],
     },
     {
       title: 'Our Coordinators',
       members: [
-        { name: 'Chakshush K Sharma', role: 'Goonj Coordinator', phone: '+91 7889231615', src: '/coordinators/Goonj Coordinator.png' },
-        { name: 'Shivani Sahgal', role: 'Cultural Coordinator', phone: '+91 8303926514', src: '/coordinators/Cultural Coordinator.png' },
-        { name: 'Mrityunjay Singh', role: 'Technical Coordinator', phone: '+91 9416027624', src: '/coordinators/Technical Coordinator.png' },
-        { name: 'Saksham Gupta', role: 'Financial Coordinator', phone: '+91 7018883576', src: '/coordinators/Financial Coordinator.png' },
+        { name: 'Chakshush K Sharma', role: 'Goonj Coordinator', phone: '+91 7889231615', src: 'https://res.cloudinary.com/dalvl67sv/image/upload/v1737921495/Coordinators/jsxkmospyu0q8xc1cdm7.png' },
+        { name: 'Shivani Sahgal', role: 'Cultural Coordinator', phone: '+91 8303926514', src: 'https://res.cloudinary.com/dalvl67sv/image/upload/v1737921494/Coordinators/skaq3zinwyenenkcpl9y.png' },
+        { name: 'Mrityunjay Singh', role: 'Technical Coordinator', phone: '+91 9416027624', src: 'https://res.cloudinary.com/dalvl67sv/image/upload/v1737921495/Coordinators/wudovxlhlpv5cn9puiw6.png' },
+        { name: 'Saksham Gupta', role: 'Financial Coordinator', phone: '+91 7018883576', src: 'https://res.cloudinary.com/dalvl67sv/image/upload/v1737921495/Coordinators/uic9xd5doqcubqfjyle0.png' },
       ],
     },
   ];

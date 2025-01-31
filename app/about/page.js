@@ -7,8 +7,7 @@ const AboutUs = () => {
     const sections = [
         {
             id: 'uiet',
-            title: 'About UIET',
-            image: '/Logos/UIET_logo.png',
+            title: 'https://res.cloudinary.com/dalvl67sv/image/upload/v1737921424/Logos/mmreyw8haf4qcmtyemv5.png',
             description: `University Institute of Engineering and Technology (UIET) is a premier engineering institute, established in 2002 as part of Panjab University. 
             It has emerged as a leading center for engineering education in North India, offering various undergraduate and postgraduate programs in engineering and technology.
             The institute focuses on holistic development through technical education, research opportunities, and vibrant campus life.`,
@@ -22,7 +21,7 @@ const AboutUs = () => {
         {
             id: 'pu',
             title: 'About Panjab University',
-            image: '/Logos/pu-logo.png',
+            image: 'https://res.cloudinary.com/dalvl67sv/image/upload/v1737921424/Logos/pswnq8dravf9v1aqjymd.png',
             description: `Panjab University is one of India's oldest universities, established in 1882. Located in Chandigarh, it has earned reputation for excellence in higher education and research.
             The university has produced numerous distinguished alumni who have made significant contributions in various fields including science, arts, politics, and industry.
             It continues to be a symbol of academic excellence and cultural heritage.`,
@@ -36,7 +35,7 @@ const AboutUs = () => {
         {
             id: 'goonj',
             title: 'About Goonj',
-            image: '/Logos/About-Us Logo.png',
+            image: 'https://res.cloudinary.com/dalvl67sv/image/upload/v1737921423/Logos/n5jvjvg9eq4whv3lhnsq.png',
             description: `Goonj is UIET's flagship annual techno-cultural festival that brings together talent, creativity, and innovation. 
             It serves as a platform for students to showcase their technical prowess and cultural talents through various competitions, workshops, and performances.
             The festival embodies the spirit of engineering and artistry, fostering a vibrant community of future innovators and leaders.`,
