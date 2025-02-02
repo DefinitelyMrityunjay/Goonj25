@@ -222,7 +222,7 @@ const GlimpseTimeline = () => {
     },
     {
       year: 2023,
-      title: "Techkriti",
+      title: "Tech Kriti",
       description:
         "Reaching unprecedented heights with global collaborations, groundbreaking technological showcases, and a vision that transcends traditional boundaries.",
       highlights: [
