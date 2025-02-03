@@ -168,7 +168,7 @@ const Hero = ({ timeLeft }) => {
                             className="rounded-full"
                         >
                             <Image
-                                src="/Logos/goonjlogow.png"
+                                src="https://res.cloudinary.com/dalvl67sv/image/upload/v1737921424/Logos/okmfxawqsdvm8p4ge3nq.png"
                                 width={250}
                                 height={250}
                                 alt="Goonj Logo"
