@@ -7,7 +7,8 @@ const AboutUs = () => {
     const sections = [
         {
             id: 'uiet',
-            title: 'https://res.cloudinary.com/dalvl67sv/image/upload/v1737921424/Logos/mmreyw8haf4qcmtyemv5.png',
+            title: 'About UIET',
+            image: 'https://res.cloudinary.com/dalvl67sv/image/upload/v1737921424/Logos/mmreyw8haf4qcmtyemv5.png',
             description: `University Institute of Engineering and Technology (UIET) is a premier engineering institute, established in 2002 as part of Panjab University. 
             It has emerged as a leading center for engineering education in North India, offering various undergraduate and postgraduate programs in engineering and technology.
             The institute focuses on holistic development through technical education, research opportunities, and vibrant campus life.`,
