@@ -406,9 +406,9 @@ const Header = () => {
                 </div>
 
                 <div className="hidden md:block">
-                    <Link href="https://res.cloudinary.com/dalvl67sv/image/upload/v1737921424/Logos/pswnq8dravf9v1aqjymd.png">
+                    <Link href="https://pu.ac.in/">
                         <Logo
-                            src="/Logos/pu-logo.png"
+                            src="https://res.cloudinary.com/dalvl67sv/image/upload/v1737921424/Logos/pswnq8dravf9v1aqjymd.png"
                             alt="PU Logo"
                             className="w-12 h-12 sm:w-16 sm:h-16"
                         />
