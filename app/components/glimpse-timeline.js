@@ -226,8 +226,8 @@ const GlimpseTimeline = () => {
       description:
         "Reaching unprecedented heights with global collaborations, groundbreaking technological showcases, and a vision that transcends traditional boundaries.",
       highlights: [
-        "Stay tuned for the star attraction!",
-        "Details of comedian to be revealed soon!",
+        "'Khaab' tha sabka, aur ab sach hone jaa raha hai. AKHIL will be performing LIVE on 21st Feb! Get ready to groove to hits like “Khaab,” “Gani,” “Rukh,” and “Teri Kami”",
+        "Band 'AAHRMB' will perform on February 20th.",
       ],
       achievements: [
         "20,000+ Expected Attendees",
