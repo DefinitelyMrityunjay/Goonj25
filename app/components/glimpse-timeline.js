@@ -195,7 +195,7 @@ const GlimpseTimeline = () => {
 
   const timelineEvents = [
     {
-      year: 2021,
+      year: 2023,
       title: "Bollywood Bash",
       description:
         "The true essence of a society is reflected through its culture and festivals. Bollywood Bash, held on the 2nd, 3rd, and 4th of March, was a thrilling and vibrant experience with an enchanting Bollywood theme.",
@@ -208,7 +208,7 @@ const GlimpseTimeline = () => {
       icon: QrCode,
     },
     {
-      year: 2022,
+      year: 2024,
       title: "Yugantar",
       description:
         "A celebration of time—Past⏳, Present, and Future⌛—Yugantar fused technology and culture into a high-energy, passion-filled extravaganza.",
@@ -221,7 +221,7 @@ const GlimpseTimeline = () => {
       icon: CircuitBoard,
     },
     {
-      year: 2023,
+      year: 2025,
       title: "Tech Kriti",
       description:
         "Reaching unprecedented heights with global collaborations, groundbreaking technological showcases, and a vision that transcends traditional boundaries.",
