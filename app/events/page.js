@@ -81,6 +81,16 @@ const EventsPage = () => {
         }
     };
 
+    const handleDownload = (e, event) => {
+        e.stopPropagation();
+        const link = document.createElement("a");
+        link.href = brochure.link;
+        link.download = `${event.brochure}.pdf`;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
+
     return (
         <div className="min-h-screen bg-[#0D0221] text-gray-200 overflow-x-hidden">
             {/* Hero Section - Adjusted padding to account for header */}
@@ -259,167 +269,176 @@ const EventsPage = () => {
                                             </div>
 
                                             <div className="flex gap-3 pt-2">
-                                                <Dialog>
-                                                    <DialogTrigger asChild>
-                                                        <Button
-                                                            variant="outline"
-                                                            className="flex-1 border border-gray-700 bg-[#1A1B23]/50 hover:bg-[#1A1B23] text-gray-300 hover:text-white transition-all duration-300 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/10 group"
-                                                        >
-                                                            <InfoIcon className="w-4 h-4 mr-2 group-hover:text-blue-400 transition-colors" />
-                                                            Details
-                                                        </Button>
-                                                    </DialogTrigger>
-                                                    <DialogContent className="bg-[#121420]/95 border-gray-800 backdrop-blur-xl shadow-2xl max-w-2xl">
-                                                        <DialogHeader className="space-y-1">
-                                                            <DialogTitle className="text-xl sm:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
-                                                                {event.title}
-                                                            </DialogTitle>
-                                                            <Badge
-                                                                className={`inline-flex w-20 ${getCategoryColor(event.category)} text-sm`}
-                                                            >
-                                                                {event.category.charAt(0).toUpperCase() + event.category.slice(1)}
-                                                            </Badge>
-                                                        </DialogHeader>
-                                                        <DialogDescription className="text-gray-400 h-[80vh] overflow-y-scroll scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-800">
-                                                            <div className="mt-6 space-y-8">
-                                                                {/* Image Section with Hover Effect */}
-                                                                <div className="relative group">
-                                                                    <AspectRatio ratio={16 / 9} className="bg-[#0A0A0F] rounded-xl overflow-hidden border border-gray-800 shadow-lg">
-                                                                        <Image
-                                                                            src={event.image}
-                                                                            alt={event.title}
-                                                                            fill
-                                                                            className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105"
-                                                                        />
-                                                                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                                                                    </AspectRatio>
-                                                                </div>
+                                                {/* <Dialog> */}
+                                                {/*     <DialogTrigger asChild> */}
+                                                {/*         <Button */}
+                                                {/*             variant="outline" */}
+                                                {/*             className="flex-1 border border-gray-700 bg-[#1A1B23]/50 hover:bg-[#1A1B23] text-gray-300 hover:text-white transition-all duration-300 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/10 group" */}
+                                                {/*         > */}
+                                                {/*             <InfoIcon className="w-4 h-4 mr-2 group-hover:text-blue-400 transition-colors" /> */}
+                                                {/*             Details */}
+                                                {/*         </Button> */}
+                                                {/*     </DialogTrigger> */}
+                                                {/*     <DialogContent className="bg-[#121420]/95 border-gray-800 backdrop-blur-xl shadow-2xl max-w-2xl"> */}
+                                                {/*         <DialogHeader className="space-y-1"> */}
+                                                {/*             <DialogTitle className="text-xl sm:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400"> */}
+                                                {/*                 {event.title} */}
+                                                {/*             </DialogTitle> */}
+                                                {/*             <Badge */}
+                                                {/*                 className={`inline-flex w-20 ${getCategoryColor(event.category)} text-sm`} */}
+                                                {/*             > */}
+                                                {/*                 {event.category.charAt(0).toUpperCase() + event.category.slice(1)} */}
+                                                {/*             </Badge> */}
+                                                {/*         </DialogHeader> */}
+                                                {/*         <DialogDescription className="text-gray-400 h-[80vh] overflow-y-scroll scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-800"> */}
+                                                {/*             <div className="mt-6 space-y-8"> */}
+                                                {/* Image Section with Hover Effect */}
+                                                {/*                 <div className="relative group"> */}
+                                                {/*                     <AspectRatio ratio={16 / 9} className="bg-[#0A0A0F] rounded-xl overflow-hidden border border-gray-800 shadow-lg"> */}
+                                                {/*                         <Image */}
+                                                {/*                             src={event.image} */}
+                                                {/*                             alt={event.title} */}
+                                                {/*                             fill */}
+                                                {/*                             className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105" */}
+                                                {/*                         /> */}
+                                                {/*                         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" /> */}
+                                                {/*                     </AspectRatio> */}
+                                                {/*                 </div> */}
+                                                {/**/}
+                                                {/* Event Details Section */}
+                                                {/*                 <div className="bg-[#1A1B23]/30 rounded-xl p-6 backdrop-blur-sm border border-gray-800/50"> */}
+                                                {/*                     <div className="grid grid-cols-2 gap-6"> */}
+                                                {/*                         <motion.div */}
+                                                {/*                             className="flex items-center gap-3 p-3 rounded-lg bg-[#1A1B23]/50 border border-gray-800/50" */}
+                                                {/*                             whileHover={{ scale: 1.02, transition: { duration: 0.2 } }} */}
+                                                {/*                         > */}
+                                                {/*                             <div className="p-2 rounded-full bg-blue-500/10"> */}
+                                                {/*                                 <Calendar className="w-5 h-5 text-blue-400" /> */}
+                                                {/*                             </div> */}
+                                                {/*                             <div> */}
+                                                {/*                                 <p className="text-xs text-gray-400">Date</p> */}
+                                                {/*                                 <p className="text-sm text-gray-200"> */}
+                                                {/*                                     {new Date(event.date).toLocaleDateString('en-IN', { */}
+                                                {/*                                         month: 'long', */}
+                                                {/*                                         day: 'numeric' */}
+                                                {/*                                     })} */}
+                                                {/*                                 </p> */}
+                                                {/*                             </div> */}
+                                                {/*                         </motion.div> */}
+                                                {/**/}
+                                                {/*                         <motion.div */}
+                                                {/*                             className="flex items-center gap-3 p-3 rounded-lg bg-[#1A1B23]/50 border border-gray-800/50" */}
+                                                {/*                             whileHover={{ scale: 1.02, transition: { duration: 0.2 } }} */}
+                                                {/*                         > */}
+                                                {/*                             <div className="p-2 rounded-full bg-purple-500/10"> */}
+                                                {/*                                 <Clock className="w-5 h-5 text-purple-400" /> */}
+                                                {/*                             </div> */}
+                                                {/*                             <div> */}
+                                                {/*                                 <p className="text-xs text-gray-400">Time</p> */}
+                                                {/*                                 <p className="text-sm text-gray-200">{event.time}</p> */}
+                                                {/*                             </div> */}
+                                                {/*                         </motion.div> */}
+                                                {/**/}
+                                                {/*                         <motion.div */}
+                                                {/*                             className="flex items-center gap-3 p-3 rounded-lg bg-[#1A1B23]/50 border border-gray-800/50" */}
+                                                {/*                             whileHover={{ scale: 1.02, transition: { duration: 0.2 } }} */}
+                                                {/*                         > */}
+                                                {/*                             <div className="p-2 rounded-full bg-green-500/10"> */}
+                                                {/*                                 <MapPin className="w-5 h-5 text-green-400" /> */}
+                                                {/*                             </div> */}
+                                                {/*                             <div> */}
+                                                {/*                                 <p className="text-xs text-gray-400">Venue</p> */}
+                                                {/*                                 <p className="text-sm text-gray-200">{event.location}</p> */}
+                                                {/*                             </div> */}
+                                                {/*                         </motion.div> */}
+                                                {/**/}
+                                                {/*                         <motion.div */}
+                                                {/*                             className="flex items-center gap-3 p-3 rounded-lg bg-[#1A1B23]/50 border border-gray-800/50" */}
+                                                {/*                             whileHover={{ scale: 1.02, transition: { duration: 0.2 } }} */}
+                                                {/*                         > */}
+                                                {/*                             <div className="p-2 rounded-full bg-yellow-500/10"> */}
+                                                {/*                                 <Users className="w-5 h-5 text-yellow-400" /> */}
+                                                {/*                             </div> */}
+                                                {/*                             <div> */}
+                                                {/*                                 <p className="text-xs text-gray-400">Team Size</p> */}
+                                                {/*                                 <p className="text-sm text-gray-200">{event.teamSize}</p> */}
+                                                {/*                             </div> */}
+                                                {/*                         </motion.div> */}
+                                                {/*                     </div> */}
+                                                {/*                 </div> */}
+                                                {/**/}
+                                                {/* Description Section */}
+                                                {/*                 <div className="bg-[#1A1B23]/30 rounded-xl p-6 backdrop-blur-sm border border-gray-800/50"> */}
+                                                {/*                     <h3 className="font-semibold text-lg text-white mb-3 flex items-center gap-2"> */}
+                                                {/*                         <InfoIcon className="w-5 h-5 text-blue-400" /> */}
+                                                {/*                         Event Description */}
+                                                {/*                     </h3> */}
+                                                {/*                     <p className="text-gray-300 leading-relaxed">{event.description}</p> */}
+                                                {/*                 </div> */}
+                                                {/**/}
+                                                {/* Rules Section */}
+                                                {/*                 <div className="bg-[#1A1B23]/30 rounded-xl p-6 backdrop-blur-sm border border-gray-800/50"> */}
+                                                {/*                     <h4 className="font-semibold text-lg text-white mb-4 flex items-center gap-2"> */}
+                                                {/*                         <Trophy className="w-5 h-5 text-blue-400" /> */}
+                                                {/*                         Rules & Guidelines */}
+                                                {/*                     </h4> */}
+                                                {/*                     <ul className="space-y-3"> */}
+                                                {/*                         {event.rules.map((rule, index) => ( */}
+                                                {/*                             <motion.li */}
+                                                {/*                                 key={index} */}
+                                                {/*                                 className="flex items-start gap-3 text-gray-300 group" */}
+                                                {/*                                 initial={{ opacity: 0, x: -20 }} */}
+                                                {/*                                 animate={{ opacity: 1, x: 0 }} */}
+                                                {/*                                 transition={{ delay: index * 0.1 }} */}
+                                                {/*                             > */}
+                                                {/*                                 <span className="flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-full bg-blue-500/10 text-blue-400 text-sm font-medium"> */}
+                                                {/*                                     {index + 1} */}
+                                                {/*                                 </span> */}
+                                                {/*                                 <span className="group-hover:text-gray-200 transition-colors"> */}
+                                                {/*                                     {rule} */}
+                                                {/*                                 </span> */}
+                                                {/*                             </motion.li> */}
+                                                {/*                         ))} */}
+                                                {/*                     </ul> */}
+                                                {/*                 </div> */}
+                                                {/**/}
+                                                {/* Prize Section */}
+                                                {/*                 <div className="grid grid-cols-2 gap-4"> */}
+                                                {/*                     <motion.div */}
+                                                {/*                         className="p-6 rounded-xl bg-gradient-to-br from-blue-500/5 to-blue-500/10 border border-blue-500/20" */}
+                                                {/*                         whileHover={{ scale: 1.02 }} */}
+                                                {/*                         transition={{ duration: 0.2 }} */}
+                                                {/*                     > */}
+                                                {/*                         <p className="text-blue-400 text-sm mb-1">Registration Fee</p> */}
+                                                {/*                         <p className="text-2xl font-bold text-white">{event.registrationFee}</p> */}
+                                                {/*                     </motion.div> */}
+                                                {/**/}
+                                                {/*                     <motion.div */}
+                                                {/*                         className="p-6 rounded-xl bg-gradient-to-br from-purple-500/5 to-purple-500/10 border border-purple-500/20" */}
+                                                {/*                         whileHover={{ scale: 1.02 }} */}
+                                                {/*                         transition={{ duration: 0.2 }} */}
+                                                {/*                     > */}
+                                                {/*                         <p className="text-purple-400 text-sm mb-1">Prize Pool</p> */}
+                                                {/*                         <p className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400"> */}
+                                                {/*                             {event.prizePool} */}
+                                                {/*                         </p> */}
+                                                {/*                     </motion.div> */}
+                                                {/*                 </div> */}
+                                                {/*             </div> */}
+                                                {/*         </DialogDescription> */}
+                                                {/*     </DialogContent> */}
+                                                {/* </Dialog> */}
 
-                                                                {/* Event Details Section */}
-                                                                <div className="bg-[#1A1B23]/30 rounded-xl p-6 backdrop-blur-sm border border-gray-800/50">
-                                                                    <div className="grid grid-cols-2 gap-6">
-                                                                        <motion.div
-                                                                            className="flex items-center gap-3 p-3 rounded-lg bg-[#1A1B23]/50 border border-gray-800/50"
-                                                                            whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
-                                                                        >
-                                                                            <div className="p-2 rounded-full bg-blue-500/10">
-                                                                                <Calendar className="w-5 h-5 text-blue-400" />
-                                                                            </div>
-                                                                            <div>
-                                                                                <p className="text-xs text-gray-400">Date</p>
-                                                                                <p className="text-sm text-gray-200">
-                                                                                    {new Date(event.date).toLocaleDateString('en-IN', {
-                                                                                        month: 'long',
-                                                                                        day: 'numeric'
-                                                                                    })}
-                                                                                </p>
-                                                                            </div>
-                                                                        </motion.div>
-
-                                                                        <motion.div
-                                                                            className="flex items-center gap-3 p-3 rounded-lg bg-[#1A1B23]/50 border border-gray-800/50"
-                                                                            whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
-                                                                        >
-                                                                            <div className="p-2 rounded-full bg-purple-500/10">
-                                                                                <Clock className="w-5 h-5 text-purple-400" />
-                                                                            </div>
-                                                                            <div>
-                                                                                <p className="text-xs text-gray-400">Time</p>
-                                                                                <p className="text-sm text-gray-200">{event.time}</p>
-                                                                            </div>
-                                                                        </motion.div>
-
-                                                                        <motion.div
-                                                                            className="flex items-center gap-3 p-3 rounded-lg bg-[#1A1B23]/50 border border-gray-800/50"
-                                                                            whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
-                                                                        >
-                                                                            <div className="p-2 rounded-full bg-green-500/10">
-                                                                                <MapPin className="w-5 h-5 text-green-400" />
-                                                                            </div>
-                                                                            <div>
-                                                                                <p className="text-xs text-gray-400">Venue</p>
-                                                                                <p className="text-sm text-gray-200">{event.location}</p>
-                                                                            </div>
-                                                                        </motion.div>
-
-                                                                        <motion.div
-                                                                            className="flex items-center gap-3 p-3 rounded-lg bg-[#1A1B23]/50 border border-gray-800/50"
-                                                                            whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
-                                                                        >
-                                                                            <div className="p-2 rounded-full bg-yellow-500/10">
-                                                                                <Users className="w-5 h-5 text-yellow-400" />
-                                                                            </div>
-                                                                            <div>
-                                                                                <p className="text-xs text-gray-400">Team Size</p>
-                                                                                <p className="text-sm text-gray-200">{event.teamSize}</p>
-                                                                            </div>
-                                                                        </motion.div>
-                                                                    </div>
-                                                                </div>
-
-                                                                {/* Description Section */}
-                                                                <div className="bg-[#1A1B23]/30 rounded-xl p-6 backdrop-blur-sm border border-gray-800/50">
-                                                                    <h3 className="font-semibold text-lg text-white mb-3 flex items-center gap-2">
-                                                                        <InfoIcon className="w-5 h-5 text-blue-400" />
-                                                                        Event Description
-                                                                    </h3>
-                                                                    <p className="text-gray-300 leading-relaxed">{event.description}</p>
-                                                                </div>
-
-                                                                {/* Rules Section */}
-                                                                <div className="bg-[#1A1B23]/30 rounded-xl p-6 backdrop-blur-sm border border-gray-800/50">
-                                                                    <h4 className="font-semibold text-lg text-white mb-4 flex items-center gap-2">
-                                                                        <Trophy className="w-5 h-5 text-blue-400" />
-                                                                        Rules & Guidelines
-                                                                    </h4>
-                                                                    <ul className="space-y-3">
-                                                                        {event.rules.map((rule, index) => (
-                                                                            <motion.li
-                                                                                key={index}
-                                                                                className="flex items-start gap-3 text-gray-300 group"
-                                                                                initial={{ opacity: 0, x: -20 }}
-                                                                                animate={{ opacity: 1, x: 0 }}
-                                                                                transition={{ delay: index * 0.1 }}
-                                                                            >
-                                                                                <span className="flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-full bg-blue-500/10 text-blue-400 text-sm font-medium">
-                                                                                    {index + 1}
-                                                                                </span>
-                                                                                <span className="group-hover:text-gray-200 transition-colors">
-                                                                                    {rule}
-                                                                                </span>
-                                                                            </motion.li>
-                                                                        ))}
-                                                                    </ul>
-                                                                </div>
-
-                                                                {/* Prize Section */}
-                                                                <div className="grid grid-cols-2 gap-4">
-                                                                    <motion.div
-                                                                        className="p-6 rounded-xl bg-gradient-to-br from-blue-500/5 to-blue-500/10 border border-blue-500/20"
-                                                                        whileHover={{ scale: 1.02 }}
-                                                                        transition={{ duration: 0.2 }}
-                                                                    >
-                                                                        <p className="text-blue-400 text-sm mb-1">Registration Fee</p>
-                                                                        <p className="text-2xl font-bold text-white">{event.registrationFee}</p>
-                                                                    </motion.div>
-
-                                                                    <motion.div
-                                                                        className="p-6 rounded-xl bg-gradient-to-br from-purple-500/5 to-purple-500/10 border border-purple-500/20"
-                                                                        whileHover={{ scale: 1.02 }}
-                                                                        transition={{ duration: 0.2 }}
-                                                                    >
-                                                                        <p className="text-purple-400 text-sm mb-1">Prize Pool</p>
-                                                                        <p className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
-                                                                            {event.prizePool}
-                                                                        </p>
-                                                                    </motion.div>
-                                                                </div>
-                                                            </div>
-                                                        </DialogDescription>
-                                                    </DialogContent>
-                                                </Dialog>
-
-                                                <Link href="/register" className="flex-1">
+                                                <a href={`/brochures/${event.brochure}`} download={event.brochure} className="flex-1">
+                                                    <Button
+                                                        variant="outline"
+                                                        className="flex-1 border border-gray-700 bg-[#1A1B23]/50 hover:bg-[#1A1B23] text-gray-300 hover:text-white transition-all duration-300 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/10 group"
+                                                    >
+                                                        <InfoIcon className="w-4 h-4 mr-2 group-hover:text-blue-400 transition-colors" />
+                                                        Details
+                                                    </Button>
+                                                </a>
+                                                <Link href={`${event.register}`} target="_blank" className="flex-1">
                                                     <Button
                                                         className="w-full bg-gradient-to-r from-blue-600/80 to-purple-600/80 hover:from-blue-500/80 hover:to-purple-500/80 text-white font-medium shadow-lg hover:shadow-xl hover:shadow-blue-500/20 transition-all duration-300"
                                                     >
