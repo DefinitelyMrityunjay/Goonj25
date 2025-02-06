@@ -361,7 +361,7 @@ const EventsSection = () => {
                                 }}
                                 transition={{ duration: 2, repeat: Infinity }}
                             >
-                                Past Events
+                             Events
                             </motion.h2>
                             <div className="flex items-center justify-center gap-2 sm:gap-4">
                                 <motion.div
