@@ -2,7 +2,7 @@
 export const events = [
     {
         title: 'Mr and Miss Goonj',
-        image: '/events/old/mr and miss goonj.jpg',
+        image: '/events/new/mr&mrsGoonj.png',
         date: '2024-03-14',
         time: '8:00 PM',
         venue: 'UIET, Panjab University',
@@ -25,7 +25,7 @@ export const events = [
     },
     {
         title: 'Bhangra Competition',
-        image: '/events/old/bhangra wars.jpg',
+        image: '/events/new/bhangra_template.jpg',
         date: '14-03-2024',
         time: '2:00 PM',
         venue: 'UIET, Panjab University, Chandigarh',
@@ -46,32 +46,32 @@ export const events = [
             ]
         }
     },
-    {
-        title: 'CID',
-        image: '/events/old/cid.png',
-        date: '2024-03-14',
-        time: '2:00 PM',
-        venue: 'UIET, Panjab University, Chandigarh',
-        description: `Step into the shoes of a true detective at CID (CRACK- INVESTIGATE -DECODE) and experience the thrill of solving a gripping mystery!`,
-        capacity: '150 attendees',
-        gallery: {
-            grid: Array(4).fill().map((_, i) => ({
-                id: i + 1,
-                image: `/events/glimpses/cid/cid-${i + 1}.jpg`,
-                title: ['cid', 'cid', 'cid', 'cid'][i],
-                size: ['large', 'medium', 'small', 'small'][i]
-            })),
-            highlights: [
-                'Participants raced against time to solve mysteries',
-                'Codes cracked and puzzles unraveled with teamwork',
-                'A thrilling detective adventure for all involved',
-                'Fun and excitement kept the competition alive'
-            ]
-        }
-    },
+    // {
+    //     title: 'CID',
+    //     image: '/events/old/cid.png',
+    //     date: '2024-03-14',
+    //     time: '2:00 PM',
+    //     venue: 'UIET, Panjab University, Chandigarh',
+    //     description: `Step into the shoes of a true detective at CID (CRACK- INVESTIGATE -DECODE) and experience the thrill of solving a gripping mystery!`,
+    //     capacity: '150 attendees',
+    //     gallery: {
+    //         grid: Array(4).fill().map((_, i) => ({
+    //             id: i + 1,
+    //             image: `/events/glimpses/cid/cid-${i + 1}.jpg`,
+    //             title: ['cid', 'cid', 'cid', 'cid'][i],
+    //             size: ['large', 'medium', 'small', 'small'][i]
+    //         })),
+    //         highlights: [
+    //             'Participants raced against time to solve mysteries',
+    //             'Codes cracked and puzzles unraveled with teamwork',
+    //             'A thrilling detective adventure for all involved',
+    //             'Fun and excitement kept the competition alive'
+    //         ]
+    //     }
+    // },
     {
         title: 'Hackathon',
-        image: '/events/old/TECHNOVATE.png',
+        image: '/events/new/Technovate.jpg',
         date: '2024-03-13',
         time: '6:00 PM',
         venue: 'UIET, Panjab, University',
@@ -94,7 +94,7 @@ export const events = [
     },
     {
         title: 'Comedy Hunt',
-        image: '/events/old/comedy Hunt.jpg',
+        image: '/events/new/comedy_hunt.png',
         date: '2024-03-12',
         time: '2:00 PM',
         venue: 'UIET, Panjab University, Chandigarh',
@@ -117,7 +117,7 @@ export const events = [
     },
     {
         title: 'Treasure Hunt',
-        image: '/events/old/TREASURE HUNT.png',
+        image: '/events/new/treasure_hunt.png',
         date: '2024-03-13',
         time: '11:00 AM',
         venue: 'UIET, Panjab University, Chandigarh',
@@ -139,8 +139,8 @@ export const events = [
         }
     },
     {
-        title: 'Monologue',
-        image: '/events/old/monologue.jpg',
+        title: 'Solo Dance',
+        image: '/events/new/solo_dance.png',
         date: '2024-03-13',
         time: '10:00 AM',
         venue: 'UIET, Panjab University, Chandigarh',
@@ -161,31 +161,31 @@ export const events = [
             ]
         }
     },
+    // {
+    //     title: 'IPL Auction',
+    //     image: '/events/old/IPL AUCTION.png',
+    //     date: '2024-03-14',
+    //     time: '1:00 PM',
+    //     venue: 'UIET, Panjab University, Chandigarh',
+    //     description: `The IPL Auction at Goonj 2025 brought the thrill of cricket and strategy to life. Participants engaged in competitive bidding to build their dream IPL teams.`,
+    //     capacity: '70 attendees',
+    //     gallery: {
+    //         grid: Array(4).fill().map((_, i) => ({
+    //             id: i + 1,
+    //             image: `/events/glimpses/ipl/ipl-${i + 1}.jpg`,
+    //             title: ['ipl', 'ipl', 'ipl', 'ipl'][i],
+    //             size: ['large', 'medium', 'small', 'small'][i]
+    //         })),
+    //         highlights: [
+    //             'Intense bidding wars among participants for their favorite players',
+    //             'Strategic planning and budgeting showcased by the teams',
+    //             'Excitement peaked as key players were snew at record prices',
+    //             'Teams carefully balanced stars and underdogs to build strong lineups'
+    //         ]
+    //     }
+    // },
     {
-        title: 'IPL Auction',
-        image: '/events/old/IPL AUCTION.png',
-        date: '2024-03-14',
-        time: '1:00 PM',
-        venue: 'UIET, Panjab University, Chandigarh',
-        description: `The IPL Auction at Goonj 2025 brought the thrill of cricket and strategy to life. Participants engaged in competitive bidding to build their dream IPL teams.`,
-        capacity: '70 attendees',
-        gallery: {
-            grid: Array(4).fill().map((_, i) => ({
-                id: i + 1,
-                image: `/events/glimpses/ipl/ipl-${i + 1}.jpg`,
-                title: ['ipl', 'ipl', 'ipl', 'ipl'][i],
-                size: ['large', 'medium', 'small', 'small'][i]
-            })),
-            highlights: [
-                'Intense bidding wars among participants for their favorite players',
-                'Strategic planning and budgeting showcased by the teams',
-                'Excitement peaked as key players were sold at record prices',
-                'Teams carefully balanced stars and underdogs to build strong lineups'
-            ]
-        }
-    },
-    {
-        title: 'Singing Solo',
+        title: 'Solo Singing',
         image: '/events/old/singing solo.jpg',
         date: '2024-03-13',
         time: '4:00 PM',
@@ -207,27 +207,138 @@ export const events = [
             ]
         }
     },
+
     {
-        title: 'CIRCUIT TRICKS',
-        image: '/events/old/CIRCUIT TRICKS.png',
-        date: '2024-03-14',
-        time: '11:00 AM',
+        title: 'Arduino Challenge',
+        image: '/events/new/arduino_coding_challenge.jpg',
+        date: '2024-03-13',
+        time: '4:00 PM',
         venue: 'UIET, Panjab University, Chandigarh',
-        description: `Get ready to spark your creativity at 'Circuit Tricks' during our annual techno-cultural fest! Test your skills by fixing pre-built circuits with various errors, ranging from easy to hard levels`,
-        capacity: '100 attendees',
-        gallery: {
-            grid: Array(4).fill().map((_, i) => ({
-                id: i + 1,
-                image: `/events/glimpses/circuit_tricks/circuit-${i + 1}.jpg`,
-                title: ['circuit_tricks', 'circuit_tricks', 'circuit_tricks', 'circuit_tricks'][i],
-                size: ['large', 'medium', 'small', 'small'][i]
-            })),
-            highlights: [
-                'Challenging circuit-solving tasks for tech enthusiasts',
-                'Participants demonstrated creativity and precision',
-                'Timed challenges kept the energy high',
-                'Cultural performancesA fun and educational experience'
-            ]
-        }
+    },
+
+    {
+        title: ' Dhol Di Raat',
+        image: '/events/new/dhol.png',
+        date: '2024-03-13',
+        time: '4:00 PM',
+        venue: 'UIET, Panjab University, Chandigarh',
+    },
+
+    {
+        title: 'Aquaventure',
+        image: '/events/new/water_rocket.png',
+        date: '2024-03-13',
+        time: '4:00 PM',
+        venue: 'UIET, Panjab University, Chandigarh',
+    },
+
+    {
+        title: 'Tech Got Talent',
+        image: '/events/new/tech_got_talent.jpg',
+        date: '2024-03-13',
+        time: '4:00 PM',
+        venue: 'UIET, Panjab University, Chandigarh',
+    },
+
+    {
+        title: 'Charcoal Challenge',
+        image: '/events/new/charcoal_challenge.png',
+        date: '2024-03-13',
+        time: '4:00 PM',
+        venue: 'UIET, Panjab University, Chandigarh',
+    },
+
+    {
+        title: 'Karma playground',
+        image: '/events/new/karma.png',
+        date: '2024-03-13',
+        time: '4:00 PM',
+        venue: 'UIET, Panjab University, Chandigarh',
+    },
+
+    {
+        title: 'Monocat',
+        image: '/events/new/monocat.png',
+        date: '2024-03-13',
+        time: '4:00 PM',
+        venue: 'UIET, Panjab University, Chandigarh',
+    },
+
+    {
+        title: 'PhotoGraphy Competition',
+        image: '/events/new/photography.png',
+        date: '2024-03-13',
+        time: '4:00 PM',
+        venue: 'UIET, Panjab University, Chandigarh',
+    },
+
+    {
+        title: 'Quiz Mania',
+        image: '/events/new/quiz.png',
+        date: '2024-03-13',
+        time: '4:00 PM',
+        venue: 'UIET, Panjab University, Chandigarh',
+    },
+    {
+        title: 'Pocket Sized',
+        image: '/events/new/pocket.png',
+        date: '2024-03-13',
+        time: '4:00 PM',
+        venue: 'UIET, Panjab University, Chandigarh',
+    },
+
+    {
+        title: 'Reel Making',
+        image: '/events/new/reel_making.png',
+        date: '2024-03-13',
+        time: '4:00 PM',
+        venue: 'UIET, Panjab University, Chandigarh',
+    },
+
+    {
+        title: 'Solo Instrumental',
+        image: '/events/new/solo_instrumental.png',
+        date: '2024-03-13',
+        time: '4:00 PM',
+        venue: 'UIET, Panjab University, Chandigarh',
+    },
+
+    {
+        title: 'Debate Competition',
+        image: '/events/new/diplomatic.png',
+        date: '2024-03-13',
+        time: '4:00 PM',
+        venue: 'UIET, Panjab University, Chandigarh',
+    },
+
+    {
+        title: 'Debate Competition',
+        image: '/events/new/diplomatic.png',
+        date: '2024-03-13',
+        time: '4:00 PM',
+        venue: 'UIET, Panjab University, Chandigarh',
     }
+    // {
+    //     title: 'CIRCUIT TRICKS',
+    //     image: '/events/old/CIRCUIT TRICKS.png',
+    //     date: '2024-03-14',
+    //     time: '11:00 AM',
+    //     venue: 'UIET, Panjab University, Chandigarh',
+    //     description: `Get ready to spark your creativity at 'Circuit Tricks' during our annual techno-cultural fest! Test your skills by fixing pre-built circuits with various errors, ranging from easy to hard levels`,
+    //     capacity: '100 attendees',
+    //     gallery: {
+    //         grid: Array(4).fill().map((_, i) => ({
+    //             id: i + 1,
+    //             image: `/events/glimpses/circuit_tricks/circuit-${i + 1}.jpg`,
+    //             title: ['circuit_tricks', 'circuit_tricks', 'circuit_tricks', 'circuit_tricks'][i],
+    //             size: ['large', 'medium', 'small', 'small'][i]
+    //         })),
+    //         highlights: [
+    //             'Challenging circuit-solving tasks for tech enthusiasts',
+    //             'Participants demonstrated creativity and precision',
+    //             'Timed challenges kept the energy high',
+    //             'Cultural performancesA fun and educational experience'
+    //         ]
+    //     }
+    // }
 ];
