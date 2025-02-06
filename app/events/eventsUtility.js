@@ -13,6 +13,8 @@ export const events = [
         teamSize: "2+ members",
         registrationFee: "₹2500/- per team",
         image: "/events/new/groove_up_template.jpg",
+        register: "",
+        brochure: "",
         rules: [
             "Each team must consist of at least three members.",
             "Participants are encouraged to showcase a variety of dance styles.",
@@ -32,6 +34,8 @@ export const events = [
         teamSize: "2+ members",
         registrationFee: "₹3000 per team",
         image: "/events/new/bhangra_template.jpg",
+        register: "",
+        brochure: "",
         rules: [
             "Each team must consist of at least three members.",
             "Teams must adhere to traditional Bhangra themes and movements while incorporating creative elements.",
@@ -52,6 +56,8 @@ export const events = [
         teamSize: "2+ members",
         registrationFee: "₹2500 per team",
         image: "/events/new/nukkad_natak_template.jpg",
+        register: "",
+        brochure: "",
         rules: [
             "Performances can be in Hindi, English or a mix of both.",
             "Vulgarity or offensive content is strictly prohibited.",
@@ -72,6 +78,8 @@ export const events = [
         teamSize: "2-5 members",
         registrationFee: "₹300 per team",
         image: "/events/new/Technovate.jpg",
+        register: "",
+        brochure: "",
         rules: [
             "Teams: 2-5 members per team.",
             "Bring your own devices and chargers.",
@@ -79,5 +87,49 @@ export const events = [
             "Submissions will be judged based on creativity, functionality, and overall execution.",
         ],
         icon: Code
-    }
+    },
+    {
+        id: 5,
+        title: "Arduino Coding Challenge",
+        category: "technical",
+        date: "2024-02-20",
+        time: "2:00 PM Onwards",
+        location: "UIET, Chandigarh",
+        description: "Test Your Coding & Hardware Skills in the Arduino Coding Challenge! In this exciting event, students will be given a problem to solve and must code an Arduino project that will be provided to them",
+        prizePool: "₹3,000+",
+        teamSize: "1-2 members",
+        registrationFee: "₹100 per team",
+        image: "/events/new/arduino_coding_challenge.jpg",
+        brochure:"arduino_coding_challenge_brochure.pdf",
+        register: "https://docs.google.com/forms/d/e/1FAIpQLSexo0475_dzY_2F0klLnLCRags5Lm9M2FIGy4DTICD574Wj1w/viewform",
+        // rules: [
+        //     "Teams: 1-2 members per team.",
+        //     "Bring your own devices and chargers.",
+        //     "Code of conduct must be adhered to.",
+        //     "Submissions will be judged based on creativity, functionality, and overall execution.",
+        // ],
+        icon: Code
+    },
+    {
+        id: 6,
+        title: "Tech Got Talent",
+        category: "technical",
+        date: "2024-02-21",
+        time: "11:00 AM Onwards",
+        location: "UIET, Chandigarh",
+        description: "Ready to showcase your tech skills? Sign up now for Tech Got Talent, where you can present your software or hardware projects and compete for amazing awards!",
+        prizePool: "₹4,000+",
+        teamSize: "1-4 members",
+        registrationFee: "₹100 per team",
+        image: "/events/new/tech_got_talent.jpg",
+        brochure: "tech_got_talent_brochure.pdf",
+        register: "https://docs.google.com/forms/d/e/1FAIpQLSelXYg-hfdMPOjzVOhHIoE4sPKhwW0Yw0tKRKSvHvJVClCkdQ/viewform?usp=sharing",
+        // rules: [
+        //     "Teams: 1-4 members per team.",
+        //     "Bring your own devices and chargers.",
+        //     "Code of conduct must be adhered to.",
+        //     "Submissions will be judged based on creativity, functionality, and overall execution.",
+        // ],
+        icon: Code
+    },
 ];
