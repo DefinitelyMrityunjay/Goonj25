@@ -7,6 +7,7 @@ import AboutSection from './components/about_home';
 import Countdown from './components/countdown';
 import EventsSection from './components/Events-carousel';
 import GlimpseTimeline from './components/glimpse-timeline';
+import NIQ from './components/NIQ';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ArrowUpCircle } from 'lucide-react';
 const BentoGallery = React.lazy(() => import("./components/gallery"))
@@ -123,7 +124,11 @@ const Home = () => {
         <FAQ />
       </section>
 
-      <section id="faq" className="relative z-50">
+      <section id="niq" className="relative z-40">
+        <NIQ />
+      </section>
+
+      <section className="relative z-50">
         {/* Scroll to Top Button */}
         <AnimatePresence>
           {showScrollTop && (

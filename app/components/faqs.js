@@ -253,7 +253,7 @@ const FAQ = () => {
         >
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="inline-flex items-center space-x-3 bg-white/5 px-6 py-3 rounded-lg 
+            className="flex sm:flex-row flex-col items-center space-x-3 bg-white/5 px-6 py-3 rounded-lg 
               border border-cyan-500/20 hover:border-cyan-500/40 transition-all duration-300"
           >
             <div className="p-2 rounded-lg bg-orange-500/10">

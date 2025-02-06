@@ -1,17 +1,12 @@
 "use client";
-
 import { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import {
   Book,
   Code,
   Users,
-  ExternalLink,
-  ChevronRight,
   Sparkles,
   Download,
-  Share2,
-  Printer,
 } from "lucide-react";
 
 export default function BrochuresPage() {
@@ -33,36 +28,17 @@ export default function BrochuresPage() {
       const progress = scrolled / maxScroll;
       setScrollProgress(progress);
     };
-
-    // const handleClickOutside = (event) => {
-    //   if (containerRef.current && !containerRef.current.contains(event.target)) {
-    //     setSelectedCard(null);
-    //   }
-    // };
-
     window.addEventListener("mousemove", handleMouseMove);
     window.addEventListener("scroll", handleScroll);
-    // document.addEventListener("mousedown", handleClickOutside);
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("scroll", handleScroll);
-      // document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
 
-  const handleCardClick = (e, index) => {
-    if (
-      e.target === e.currentTarget ||
-      e.target.closest(".card-main-content")
-    ) {
-      setSelectedCard(selectedCard === index ? null : index);
-    }
-  };
-
   const handleDownload = (e, brochure) => {
     e.stopPropagation();
-    // console.log(`Downloading ${brochure.title}...`);
     const link = document.createElement("a");
     link.href = brochure.link;
     link.download = `${brochure.title}.pdf`;
@@ -70,28 +46,6 @@ export default function BrochuresPage() {
     link.click();
     document.body.removeChild(link);
   };
-
-  // const handleShare = (e, brochure) => {
-  //   e.stopPropagation();
-  //   if (navigator.share) {
-  //     navigator.share({
-  //       title: brochure.title,
-  //       text: brochure.description,
-  //       url: brochure.link,
-  //     }).catch((error) => console.log('Error sharing:', error));
-  //   } else {
-  //     navigator.clipboard.writeText(brochure.link)
-  //       .then(() => alert('Link copied to clipboard!'))
-  //       .catch((err) => console.error('Failed to copy:', err));
-  //   }
-  // };
-
-  // const handlePrintRequest = (e, brochure) => {
-  //   e.stopPropagation();
-  //   console.log(`Requesting printed copy of ${brochure.title}...`);
-  //   alert(`Thank you for requesting a printed copy of ${brochure.title}. Our team will contact you shortly.`);
-  // };
-
   const brochures = [
     {
       title: "Marketing Brochure",
@@ -100,7 +54,7 @@ export default function BrochuresPage() {
       icon: Book,
       color: "from-pink-600 to-rose-600",
       link: "brochures/marketing_brochure_2025.pdf",
-      stats: { pages: 25, downloads: "2.1k", lastUpdated: "2025" },
+      stats: { pages: 25, lastUpdated: "2025" },
     },
     {
       title: "Technical Brochure",
@@ -109,7 +63,7 @@ export default function BrochuresPage() {
       icon: Code,
       color: "from-blue-600 to-cyan-600",
       link: "brochures/marketing_brochure_2025.pdf",
-      stats: { pages: 25, downloads: "3.4k", lastUpdated: "2025" },
+      stats: { pages: 25, lastUpdated: "2025" },
     },
     {
       title: "Cultural Brochure",
@@ -117,8 +71,8 @@ export default function BrochuresPage() {
         "Discover our culture, core values, and the vibrant community that drives our success.",
       icon: Users,
       color: "from-purple-600 to-indigo-600",
-      link: "brochures/marketing_brochure_2025.pdf",
-      stats: { pages: 25, downloads: "1.8k", lastUpdated: "2025" },
+      link: "brochures/cultural_brochure_2025.pdf",
+      stats: { pages: 43, lastUpdated: "2025" },
     },
   ];
 
@@ -174,24 +128,20 @@ export default function BrochuresPage() {
               <motion.div
                 className={`group rounded-xl p-8 cursor-pointer bg-gray-900/80 backdrop-blur-sm
                           border border-gray-800 hover:border-gray-700 transition-all duration-300
-                          ${
-                            selectedCard === index
-                              ? "ring-2 ring-purple-500"
-                              : ""
-                          }`}
+                          ${selectedCard === index
+                    ? "ring-2 ring-purple-500"
+                    : ""
+                  }`}
                 style={{
                   height: selectedCard === index ? "auto" : "300px",
                 }}
                 whileHover={{ scale: 1.02 }}
-                // onClick={(e) => handleCardClick(e, index)}
                 onHoverStart={() => setHoveredCard(index)}
                 onHoverEnd={() => setHoveredCard(null)}
               >
                 <div
-                  className={`absolute inset-0 bg-gradient-to-br ${brochure.color} opacity-0 
-                              group-hover:opacity-10 rounded-xl transition-opacity duration-300`}
+                  className={`absolute inset-0 bg-gradient-to-br ${brochure.color} opacity-0 group-hover:opacity-10 rounded-xl transition-opacity duration-300`}
                 />
-
                 <div className="card-main-content">
                   <div className="flex items-center justify-between mb-6 relative">
                     <motion.div
@@ -214,7 +164,6 @@ export default function BrochuresPage() {
                       <Download className="w-3 h-3" />
                     </motion.button>
                   </div>
-
                   <div className="relative">
                     <h2
                       className="text-2xl font-semibold mb-3 text-white group-hover:text-transparent 
@@ -227,73 +176,15 @@ export default function BrochuresPage() {
                       {brochure.description}
                     </p>
                   </div>
-
-                  <div className="flex items-center justify-between text-xs text-gray-500 border-t border-gray-800 pt-4 mt-8">
+                  <div className="flex items-center justify-between text-xs text-gray-500 border-t border-gray-800 mt-2">
                     <span>{brochure.stats.pages} pages</span>
-                    {/* <div className="flex items-center gap-2">
-                      <Download className="w-3 h-3" />
-                      {brochure.stats.downloads}
-                    </div> */}
                     <span>Updated {brochure.stats.lastUpdated}</span>
                   </div>
                 </div>
-
-                {/* <AnimatePresence>
-                  {selectedCard === index && (
-                    <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: "auto" }}
-                      exit={{ opacity: 0, height: 0 }}
-                      className="mt-4 pt-4 border-t border-gray-800"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      <div className="text-gray-400 text-sm space-y-2">
-                        <motion.button
-                          className="w-full flex items-center gap-2 p-2 rounded-lg hover:bg-gray-800/50 
-                                   hover:text-white transition-all"
-                          whileHover={{ x: 5 }}
-                          onClick={(e) => handleDownload(e, brochure)}
-                        >
-                          <Download className="w-4 h-4 text-purple-400" />
-                          <span>Download for offline viewing</span>
-                        </motion.button>
-                        <motion.button
-                          className="w-full flex items-center gap-2 p-2 rounded-lg hover:bg-gray-800/50 
-                                   hover:text-white transition-all"
-                          whileHover={{ x: 5 }}
-                          onClick={(e) => handleShare(e, brochure)}
-                        >
-                          <Share2 className="w-4 h-4 text-purple-400" />
-                          <span>Share with your team</span>
-                        </motion.button>
-                        <motion.button
-                          className="w-full flex items-center gap-2 p-2 rounded-lg hover:bg-gray-800/50 
-                                   hover:text-white transition-all"
-                          whileHover={{ x: 5 }}
-                          onClick={(e) => handlePrintRequest(e, brochure)}
-                        >
-                          <Printer className="w-4 h-4 text-purple-400" />
-                          <span>Request printed copy</span>
-                        </motion.button>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence> */}
               </motion.div>
             </motion.div>
           ))}
         </div>
-
-        {/* <motion.div
-          className="mt-16 text-center"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1 }}
-        >
-          <p className="text-gray-400 italic">
-            Click any card to see more options, or click the view button to open the brochure
-          </p>
-        </motion.div> */}
       </div>
     </div>
   );
