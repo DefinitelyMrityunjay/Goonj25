@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import {
     Book,
     Download,
+    Calendar
 } from "lucide-react";
 
 export default function NIQ() {
@@ -71,9 +72,14 @@ export default function NIQ() {
                         >
                             Goonj Notice for Inviting Quotations 2025
                         </h2>
-                        <p className="text-gray-400 text-sm">
-                            Quotations should be submitted as per the instructions in the downloaded document.
-                        </p>
+                        <div className="text-gray-400 text-sm">
+                            <p>
+                                Quotations should be submitted as per the instructions in the downloaded document.
+                            </p>
+                            <p>
+                                <Calendar className="w-6 h-6 text-orange-500" />
+                            </p>
+                        </div>
                     </div>
                     <div className="flex items-center justify-between text-xs text-gray-500 border-t border-gray-800 pt-4 mt-8">
                         <span>8 pages</span>

@@ -97,16 +97,15 @@ const Home = () => {
         <Hero timeLeft={timeLeft} Countdown={Countdown} />
       </section>
 
- <section id="niq" className="relative z-40">
+      <section id="niq" className="relative z-40">
         <NIQ />
       </section>
 
-      {/* Events Carousel Section */}
-/*
+      {/* Events Carousel Section
       <section id="about" className="relative z-40">
         <EventsSection />
-      </section>
-*/
+      </section> */}
+
 
       {/* About Section */}
       <section id="about" className="relative z-40">
