@@ -97,6 +97,10 @@ const Home = () => {
         <Hero timeLeft={timeLeft} Countdown={Countdown} />
       </section>
 
+ <section id="niq" className="relative z-40">
+        <NIQ />
+      </section>
+
       {/* Events Carousel Section */}
       <section id="about" className="relative z-40">
         <EventsSection />
@@ -124,9 +128,6 @@ const Home = () => {
         <FAQ />
       </section>
 
-      <section id="niq" className="relative z-40">
-        <NIQ />
-      </section>
 
       <section className="relative z-50">
         {/* Scroll to Top Button */}
