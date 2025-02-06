@@ -1,19 +1,14 @@
 "use client";
-import React, { useState} from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-import dynamic from 'next/dynamic';
-
-const EventModal = dynamic(() => import('./EventModal'), {
-    ssr: false
-})
+import { useRouter } from 'next/navigation'
 
 export const PinContainer = ({
     title,
     children,
-    event
 }) => {
     const [transform, setTransform] = useState("translate(-50%,-50%) rotateX(0deg)");
-    const [showModal, setShowModal] = useState(false);
+    const router = useRouter();
 
     const onMouseEnter = () => {
         setTransform("translate(-50%,-50%) rotateX(40deg) scale(0.8)");
@@ -28,8 +23,8 @@ export const PinContainer = ({
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
             onClick={(e) => {
-                onMouseLeave();
-                setShowModal(true);
+                // onMouseLeave();
+                router.push('/events')
             }}>
             <div
                 style={{
@@ -46,11 +41,6 @@ export const PinContainer = ({
                 </div>
             </div>
             <PinPerspective title={title} />
-            <EventModal
-                isOpen={showModal}
-                onClose={() => setShowModal(false)}
-                event={event}
-            />
         </div>)
     );
 };

@@ -277,7 +277,7 @@ const DesktopView = ({ events }) => {
                 </motion.div>
             </div>
 
-            <div className="absolute inset-x-4 flex items-center justify-between pointer-events-none">
+            <div className="absolute z-40 inset-x-4 flex items-center justify-between pointer-events-none">
                 <NavigationButton
                     direction="prev"
                     onClick={prevSlide}
@@ -341,7 +341,7 @@ const EventsSection = () => {
             </svg>
 
             {/* Header Section */}
-            <div className="container mx-auto px-4 mb-8 sm:mb-12 relative z-10" ref={ref}>
+            <div className="container mx-auto px-4 relative z-10" ref={ref}>
                 <AnimatePresence>
                     {inView && (
                         <motion.div
