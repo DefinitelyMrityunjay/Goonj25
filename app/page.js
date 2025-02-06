@@ -107,12 +107,12 @@ const Home = () => {
         <AboutSection />
       </section>
 
-      {/* Gallery Section */}
+      {/* Gallery Section
       <section id="gallery" className="relative z-40">
         <Suspense fallback={<p>This is loading...</p>}>
           <BentoGallery />
         </Suspense>
-      </section>
+      </section> */}
 
       {/* Glimpse Timeline Section */}
       <section id="timeline" className="relative z-40">
