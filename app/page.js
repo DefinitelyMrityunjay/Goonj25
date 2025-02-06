@@ -102,9 +102,11 @@ const Home = () => {
       </section>
 
       {/* Events Carousel Section */}
+/*
       <section id="about" className="relative z-40">
         <EventsSection />
       </section>
+*/
 
       {/* About Section */}
       <section id="about" className="relative z-40">
