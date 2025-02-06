@@ -277,7 +277,7 @@ const DesktopView = ({ events }) => {
                 </motion.div>
             </div>
 
-            <div className="absolute z-40 inset-x-4 flex items-center justify-between pointer-events-none">
+            <div className="absolute inset-x-4 flex items-center justify-between pointer-events-none">
                 <NavigationButton
                     direction="prev"
                     onClick={prevSlide}
