@@ -20,125 +20,128 @@ const SponsorPage = () => {
               "from-blue-400 to-indigo-400",
             ],
             sponsors: [
+              // Column1
                 {
                   name: "Sponsor Name",
                   type: "Sponsor Title",
-                  image:"https://res.cloudinary.com/dngc8i1iy/image/upload/v1739168864/Goonj%20Events/goonj_events/ictqoapbswjdsa8odvpi.png",
+                  image:"https://res.cloudinary.com/dalvl67sv/image/upload/v1739188259/PVR_Logo_kellkh.png",
                 },
                 {
                   name: "Sponsor Name",
                   type: "Sponsor Title",
-                  image:"https://res.cloudinary.com/dngc8i1iy/image/upload/v1739168864/Goonj%20Events/goonj_events/ictqoapbswjdsa8odvpi.png",
+                  image:"https://res.cloudinary.com/dalvl67sv/image/upload/v1739189328/ChicagoPizza_ihl9jb.png",
                 },
                 {
                   name: "Sponsor Name",
                   type: "Sponsor Title",
-                  image:"https://res.cloudinary.com/dngc8i1iy/image/upload/v1739168864/Goonj%20Events/goonj_events/ictqoapbswjdsa8odvpi.png",
+                  image:"https://res.cloudinary.com/dalvl67sv/image/upload/v1739189329/Malabar_Gold_and_Diamonds_New_Logo_nlwtqg.jpg",
                 },
                 {
                   name: "Sponsor Name",
                   type: "Sponsor Title",
-                  image:"https://res.cloudinary.com/dngc8i1iy/image/upload/v1739168864/Goonj%20Events/goonj_events/ictqoapbswjdsa8odvpi.png",
+                  image:"https://res.cloudinary.com/dalvl67sv/image/upload/v1739190311/RedBull_etm0en.png",
                 },
                 {
                   name: "Sponsor Name",
                   type: "Sponsor Title",
-                  image:"https://res.cloudinary.com/dngc8i1iy/image/upload/v1739168864/Goonj%20Events/goonj_events/ictqoapbswjdsa8odvpi.png",
+                  image:"https://res.cloudinary.com/dalvl67sv/image/upload/v1739190310/PaperBoat_zmk25l.png",
                 },
                 {
                   name: "Sponsor Name",
                   type: "Sponsor Title",
-                  image:"https://res.cloudinary.com/dngc8i1iy/image/upload/v1739168864/Goonj%20Events/goonj_events/ictqoapbswjdsa8odvpi.png",
+                  image:"https://res.cloudinary.com/dalvl67sv/image/upload/v1739190954/theka_dv76qd.png",
                 },
                 {
                   name: "Sponsor Name",
                   type: "Sponsor Title",
-                  image:"https://res.cloudinary.com/dngc8i1iy/image/upload/v1739168864/Goonj%20Events/goonj_events/ictqoapbswjdsa8odvpi.png",
+                  image:"https://res.cloudinary.com/dalvl67sv/image/upload/v1739190954/Geeks_For_geeks_j67g7p.jpg",
                 },
                 {
                   name: "Sponsor Name",
                   type: "Sponsor Title",
-                  image:"https://res.cloudinary.com/dngc8i1iy/image/upload/v1739168864/Goonj%20Events/goonj_events/ictqoapbswjdsa8odvpi.png",
+                  image:"https://res.cloudinary.com/dalvl67sv/image/upload/v1739190954/Decathlon_syetpk.png",
+                },
+                // Column2
+                {
+                  name: "Sponsor Name",
+                  type: "Sponsor Title",
+                  image:"https://res.cloudinary.com/dalvl67sv/image/upload/v1739189329/SBI_logo_bsemjw.jpg",
                 },
                 {
                   name: "Sponsor Name",
                   type: "Sponsor Title",
-                  image:"https://res.cloudinary.com/dngc8i1iy/image/upload/v1739168864/Goonj%20Events/goonj_events/ictqoapbswjdsa8odvpi.png",
+                  image:"https://res.cloudinary.com/dalvl67sv/image/upload/v1739189329/vivo_cucdyb.jpg",
                 },
                 {
                   name: "Sponsor Name",
                   type: "Sponsor Title",
-                  image:"https://res.cloudinary.com/dngc8i1iy/image/upload/v1739168864/Goonj%20Events/goonj_events/ictqoapbswjdsa8odvpi.png",
+                  image:"https://res.cloudinary.com/dalvl67sv/image/upload/v1739189329/RollXpress_radqeh.png",
                 },
                 {
                   name: "Sponsor Name",
                   type: "Sponsor Title",
-                  image:"https://res.cloudinary.com/dngc8i1iy/image/upload/v1739168864/Goonj%20Events/goonj_events/ictqoapbswjdsa8odvpi.png",
+                  image:"https://res.cloudinary.com/dalvl67sv/image/upload/v1739190310/BarbequeNation_uet3kz.png",
                 },
                 {
                   name: "Sponsor Name",
                   type: "Sponsor Title",
-                  image:"https://res.cloudinary.com/dngc8i1iy/image/upload/v1739168864/Goonj%20Events/goonj_events/ictqoapbswjdsa8odvpi.png",
+                  image:"https://res.cloudinary.com/dalvl67sv/image/upload/v1739190311/Expert_Education_Visa_bc4nv3.png",
                 },
                 {
                   name: "Sponsor Name",
                   type: "Sponsor Title",
-                  image:"https://res.cloudinary.com/dngc8i1iy/image/upload/v1739168864/Goonj%20Events/goonj_events/ictqoapbswjdsa8odvpi.png",
+                  image:"https://res.cloudinary.com/dalvl67sv/image/upload/v1739190314/PuPulse_xs6m0u.png",
                 },
                 {
                   name: "Sponsor Name",
                   type: "Sponsor Title",
-                  image:"https://res.cloudinary.com/dngc8i1iy/image/upload/v1739168864/Goonj%20Events/goonj_events/ictqoapbswjdsa8odvpi.png",
+                  image:"https://res.cloudinary.com/dalvl67sv/image/upload/v1739190953/BostonBites_o61el2.jpg",
                 },
                 {
                   name: "Sponsor Name",
                   type: "Sponsor Title",
-                  image:"https://res.cloudinary.com/dngc8i1iy/image/upload/v1739168864/Goonj%20Events/goonj_events/ictqoapbswjdsa8odvpi.png",
+                  image:"https://res.cloudinary.com/dalvl67sv/image/upload/v1739190954/dainik_bhaskar_drjufk.png",
+                },
+                // Column3
+                {
+                  name: "Sponsor Name",
+                  type: "Sponsor Title",
+                  image:"https://res.cloudinary.com/dalvl67sv/image/upload/v1739189329/coding-ninjas_zeix4z.jpg",
                 },
                 {
                   name: "Sponsor Name",
                   type: "Sponsor Title",
-                  image:"https://res.cloudinary.com/dngc8i1iy/image/upload/v1739168864/Goonj%20Events/goonj_events/ictqoapbswjdsa8odvpi.png",
+                  image:"https://res.cloudinary.com/dalvl67sv/image/upload/v1739189329/unstop_toigwf.jpg",
                 },
                 {
                   name: "Sponsor Name",
                   type: "Sponsor Title",
-                  image:"https://res.cloudinary.com/dngc8i1iy/image/upload/v1739168864/Goonj%20Events/goonj_events/ictqoapbswjdsa8odvpi.png",
+                  image:"https://res.cloudinary.com/dalvl67sv/image/upload/v1739190310/RanglaTV_cvb9vs.png",
                 },
                 {
                   name: "Sponsor Name",
                   type: "Sponsor Title",
-                  image:"https://res.cloudinary.com/dngc8i1iy/image/upload/v1739168864/Goonj%20Events/goonj_events/ictqoapbswjdsa8odvpi.png",
+                  image:"https://res.cloudinary.com/dalvl67sv/image/upload/v1739190310/yourpedia_logo_lx1h6j.jpg",
                 },
                 {
                   name: "Sponsor Name",
                   type: "Sponsor Title",
-                  image:"https://res.cloudinary.com/dngc8i1iy/image/upload/v1739168864/Goonj%20Events/goonj_events/ictqoapbswjdsa8odvpi.png",
+                  image:"https://res.cloudinary.com/dalvl67sv/image/upload/v1739190310/Jal_qtlpfm.jpg",
                 },
                 {
                   name: "Sponsor Name",
                   type: "Sponsor Title",
-                  image:"https://res.cloudinary.com/dngc8i1iy/image/upload/v1739168864/Goonj%20Events/goonj_events/ictqoapbswjdsa8odvpi.png",
+                  image:"https://res.cloudinary.com/dalvl67sv/image/upload/v1739190955/Roadies_a3brzu.jpg",
                 },
                 {
                   name: "Sponsor Name",
                   type: "Sponsor Title",
-                  image:"https://res.cloudinary.com/dngc8i1iy/image/upload/v1739168864/Goonj%20Events/goonj_events/ictqoapbswjdsa8odvpi.png",
+                  image:"https://res.cloudinary.com/dalvl67sv/image/upload/v1739190958/The_Souled_store_dflyyv.png",
                 },
                 {
                   name: "Sponsor Name",
                   type: "Sponsor Title",
-                  image:"https://res.cloudinary.com/dngc8i1iy/image/upload/v1739168864/Goonj%20Events/goonj_events/ictqoapbswjdsa8odvpi.png",
-                },
-                {
-                  name: "Sponsor Name",
-                  type: "Sponsor Title",
-                  image:"https://res.cloudinary.com/dngc8i1iy/image/upload/v1739168864/Goonj%20Events/goonj_events/ictqoapbswjdsa8odvpi.png",
-                },
-                {
-                  name: "Sponsor Name",
-                  type: "Sponsor Title",
-                  image:"https://res.cloudinary.com/dngc8i1iy/image/upload/v1739168864/Goonj%20Events/goonj_events/ictqoapbswjdsa8odvpi.png",
+                  image:"https://res.cloudinary.com/dalvl67sv/image/upload/v1739190958/coco_nmdngp.png",
                 },
             ]
         },
