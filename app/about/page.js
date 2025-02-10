@@ -73,7 +73,7 @@ const AboutUs = () => {
     return (
         <div className="bg-[#1A0F2E] overflow-hidden">
             {/* Indo-Tech Background Effects */}
-            <div className="fixed inset-0 bg-gradient-to-b from-[#1A0F2E] via-[#2A1F3D] to-[#1A0F2E] opacity-50" />
+            <div className="fixed inset-0 bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 opacity-50" />
             
             {/* Mandala-inspired Circuit Pattern */}
             <div className="fixed inset-0 bg-[url('/circuit-pattern.png')] bg-repeat opacity-5" />
