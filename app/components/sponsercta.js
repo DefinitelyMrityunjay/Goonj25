@@ -15,9 +15,8 @@ const SponserCTA = () => {
 
   const handleDownload = (e) => {
     e.stopPropagation();
-    // console.log(`Downloading ${brochure.title}...`);
     const link = document.createElement("a");
-    link.href = "brochures/marketing_brochure_2025.pdf";
+    link.href = "https://drive.google.com/file/d/1ctxn5ce9e54JbXmtC8mWoc9irw9tpZbf/view?usp=sharing";
     link.download = `Marketing Brochure GOONJ 2025.pdf`;
     document.body.appendChild(link);
     link.click();
