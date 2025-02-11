@@ -411,7 +411,7 @@ const SponsorPage = () => {
             Our Partners in Innovation
           </h1>
           <p className="text-gray-400 text-xl max-w-2xl mx-auto mb-8">
-            Meet the pioneering organizations advancing biotechnology research
+            Meet our esteemed past sponsors who have supported innovation, creativity, and excellence in Goonj.
             and development
           </p>
         </motion.div>
