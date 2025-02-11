@@ -15,11 +15,6 @@ export const events = [
         image: "/events/new/groove_up_template.jpg",
         register: "",
         brochure: "",
-        rules: [
-            "Each team must consist of at least three members.",
-            "Participants are encouraged to showcase a variety of dance styles.",
-            "The judges' decisions are final and binding."
-        ],
         icon: Music
     },
     {
@@ -36,12 +31,6 @@ export const events = [
         image: "/events/new/bhangra_template.jpg",
         register: "",
         brochure: "",
-        rules: [
-            "Each team must consist of at least three members.",
-            "Teams must adhere to traditional Bhangra themes and movements while incorporating creative elements.",
-            "Use of traditional Bhangra props, such as dhols, saaps, chimtas, or khundas, is allowed and encouraged.",
-            "The judges' decisions are final and binding."
-        ],
         icon: Music
     },
     {
@@ -58,12 +47,6 @@ export const events = [
         image: "/events/new/nukkad_natak_template.jpg",
         register: "",
         brochure: "",
-        rules: [
-            "Performances can be in Hindi, English or a mix of both.",
-            "Vulgarity or offensive content is strictly prohibited.",
-            "Teams may use handheld props and costumes.",
-            "Performances must adapt to an open and informal setting.",
-        ],
         icon: Music
     },
     {
@@ -80,12 +63,6 @@ export const events = [
         image: "/events/new/Technovate.jpg",
         register: "",
         brochure: "",
-        rules: [
-            "Teams: 2-5 members per team.",
-            "Bring your own devices and chargers.",
-            "Code of conduct must be adhered to.",
-            "Submissions will be judged based on creativity, functionality, and overall execution.",
-        ],
         icon: Code
     },
     {
@@ -100,14 +77,8 @@ export const events = [
         teamSize: "1-2 members",
         registrationFee: "₹100 per team",
         image: "/events/new/arduino_coding_challenge.jpg",
-        brochure:"arduino_coding_challenge_brochure.pdf",
+        brochure:"https://drive.google.com/file/d/1Di1gC0xPoM2KP1Um_R-fqn72odOuMq1S/view?usp=sharing",
         register: "https://docs.google.com/forms/d/e/1FAIpQLSexo0475_dzY_2F0klLnLCRags5Lm9M2FIGy4DTICD574Wj1w/viewform",
-        // rules: [
-        //     "Teams: 1-2 members per team.",
-        //     "Bring your own devices and chargers.",
-        //     "Code of conduct must be adhered to.",
-        //     "Submissions will be judged based on creativity, functionality, and overall execution.",
-        // ],
         icon: Code
     },
     {
@@ -122,14 +93,8 @@ export const events = [
         teamSize: "1-4 members",
         registrationFee: "₹100 per team",
         image: "/events/new/tech_got_talent.jpg",
-        brochure: "tech_got_talent_brochure.pdf",
+        brochure: "https://drive.google.com/file/d/1FbJvHzODQP1p69dOBbtaG26mjuLPDzx7/view?usp=sharing",
         register: "https://docs.google.com/forms/d/e/1FAIpQLSelXYg-hfdMPOjzVOhHIoE4sPKhwW0Yw0tKRKSvHvJVClCkdQ/viewform?usp=sharing",
-        // rules: [
-        //     "Teams: 1-4 members per team.",
-        //     "Bring your own devices and chargers.",
-        //     "Code of conduct must be adhered to.",
-        //     "Submissions will be judged based on creativity, functionality, and overall execution.",
-        // ],
         icon: Code
     },
 ];
