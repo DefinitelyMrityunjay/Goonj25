@@ -412,7 +412,6 @@ const SponsorPage = () => {
           </h1>
           <p className="text-gray-400 text-xl max-w-2xl mx-auto mb-8">
             Meet our esteemed past sponsors who have supported innovation, creativity, and excellence in Goonj.
-            and development
           </p>
         </motion.div>
 
