@@ -33,7 +33,7 @@ export default function NIQ() {
                 className="w-24 h-1 bg-gradient-to-r from-orange-500 via-cyan-500 to-orange-500 mx-auto mb-8 rounded"
             />
             <motion.div
-                className={`group w-[clamp(250px,30vw,100rem)] mx-auto rounded-xl p-8 cursor-pointer bg-gray-900/80 backdrop-blur-sm border border-gray-800 hover:border-gray-700 transition-all duration-300 ring-2 ring-purple-500`}
+                className={`group w-[clamp(300px,30vw,100rem)] mx-auto rounded-xl p-8 cursor-pointer bg-gray-900/80 backdrop-blur-sm border border-gray-800 hover:border-gray-700 transition-all duration-300 ring-2 ring-purple-500`}
                 style={{
                     height: "auto",
                 }}
@@ -76,8 +76,9 @@ export default function NIQ() {
                             <p>
                                 Quotations should be submitted as per the instructions in the downloaded document.
                             </p>
-                            <p>
-                                <Calendar className="w-6 h-6 text-orange-500" />
+                            <p className="flex mt-2 items-center text-orange-500 gap-2">
+                                <Calendar className="w-6 h-6" />
+                                Submit before 10 Feb 4:00 PM
                             </p>
                         </div>
                     </div>

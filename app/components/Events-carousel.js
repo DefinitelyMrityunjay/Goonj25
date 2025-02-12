@@ -341,7 +341,7 @@ const EventsSection = () => {
             </svg>
 
             {/* Header Section */}
-            <div className="container mx-auto px-4 mb-8 sm:mb-12 relative z-10" ref={ref}>
+            <div className="container mx-auto px-4 relative z-10" ref={ref}>
                 <AnimatePresence>
                     {inView && (
                         <motion.div

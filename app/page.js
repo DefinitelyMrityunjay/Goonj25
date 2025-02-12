@@ -5,7 +5,7 @@ import FAQ from './components/faqs';
 import Preloader from './components/preloader';
 import AboutSection from './components/about_home';
 import Countdown from './components/countdown';
-import EventsSection from './components/Events-carousel';
+import EventSection from './components/Events-carousel';
 import GlimpseTimeline from './components/glimpse-timeline';
 import NIQ from './components/NIQ';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -102,9 +102,8 @@ const Home = () => {
       </section>
 
       {/* Events Carousel Section */}
-
       <section id="about" className="relative z-40">
-        <EventsSection />
+        <EventSection />
       </section>
 
 

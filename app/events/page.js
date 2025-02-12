@@ -81,16 +81,6 @@ const EventsPage = () => {
         }
     };
 
-    const handleDownload = (e, event) => {
-        e.stopPropagation();
-        const link = document.createElement("a");
-        link.href = brochure.link;
-        link.download = `${event.brochure}.pdf`;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    };
-
     return (
         <div className="min-h-screen bg-[#0D0221] text-gray-200 overflow-x-hidden">
             {/* Hero Section - Adjusted padding to account for header */}
@@ -166,7 +156,7 @@ const EventsPage = () => {
                     className="sticky top-24 sm:top-28 z-40 bg-[#0D0221]/80 backdrop-blur-sm py-2"
                 >
                     <Tabs defaultValue="all" className="mb-6 sm:mb-8">
-                        <TabsList className="flex justify-center w-full bg-[#1A0F1F]/50 backdrop-blur-sm">
+                        <TabsList className="flex flex-wrap justify-center w-full bg-[#1A0F1F]/50 backdrop-blur-sm">
                             {categories.map(category => (
                                 <TabsTrigger
                                     key={category.id}
