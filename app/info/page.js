@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import {
-  Book,
+  Gamepad,
   Code,
   Users,
   Sparkles,
@@ -48,30 +48,30 @@ export default function BrochuresPage() {
   };
   const brochures = [
     {
-      title: "Marketing Brochure",
+      title: "Sports Brochure",
       description:
-        "Explore our marketing strategies and success stories that have shaped our brand journey.",
-      icon: Book,
+        "Compete, collaborate, and conquer in adrenaline-pumping sports and fitness challenges.",
+      icon: Gamepad,
       color: "from-pink-600 to-rose-600",
-      link: "brochures/marketing_brochure_2025.pdf",
+      link: "https://drive.google.com/file/d/1Xc3-jtkzijwhDG6vCdFB2eJS8RA66UuL/view?usp=drive_link",
       stats: { pages: 25, lastUpdated: "2025" },
     },
     {
       title: "Technical Brochure",
       description:
-        "Dive into our technical specifications, innovative solutions, and engineering excellence.",
+        "Showcase your innovation and technical expertise through coding, robotics, and engineering challenges.",
       icon: Code,
       color: "from-blue-600 to-cyan-600",
-      link: "brochures/marketing_brochure_2025.pdf",
+      link: "https://drive.google.com/file/d/1TaDH8Yca-jtSuaJFqGfXA-QKEI6_d2fm/view?usp=drive_link",
       stats: { pages: 25, lastUpdated: "2025" },
     },
     {
       title: "Cultural Brochure",
       description:
-        "Discover our culture, core values, and the vibrant community that drives our success.",
+        "Unleash your creativity with music, dance, drama, and artistic performances that celebrate diverse cultures.",
       icon: Users,
       color: "from-purple-600 to-indigo-600",
-      link: "brochures/cultural_brochure_2025.pdf",
+      link: "https://drive.google.com/file/d/1Qnn37AdAE4xnwD7QarNWrUlp1QzFYZth/view?usp=drive_link",
       stats: { pages: 43, lastUpdated: "2025" },
     },
   ];
