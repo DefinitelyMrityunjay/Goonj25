@@ -97,7 +97,7 @@ const Home = () => {
         <Hero timeLeft={timeLeft} Countdown={Countdown} />
       </section>
 
-      <section id="niq" className="relative z-40">
+ <section id="niq" className="relative z-40">
         <NIQ />
       </section>
 
@@ -112,12 +112,12 @@ const Home = () => {
         <AboutSection />
       </section>
 
-      {/* Gallery Section
+      {/* Gallery Section */}
       <section id="gallery" className="relative z-40">
         <Suspense fallback={<p>This is loading...</p>}>
           <BentoGallery />
         </Suspense>
-      </section> */}
+      </section>
 
       {/* Glimpse Timeline Section */}
       <section id="timeline" className="relative z-40">
