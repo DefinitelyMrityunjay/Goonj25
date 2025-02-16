@@ -3,7 +3,7 @@ export const events = [
   {
     id: 1,
     title: "Groove Up",
-    category: "cultural",
+    category: "groupPerformance",
     date: "2025-02-19",
     time: "12:00 PM - 6:00 PM",
     location: "UIET, Chandigarh",
@@ -27,7 +27,7 @@ export const events = [
   {
     id: 2,
     title: "Bhangra Competition",
-    category: "cultural",
+    category: "groupPerformance",
     date: "2025-02-19",
     time: "5:00 PM - 10:00 PM",
     location: "UIET, Chandigarh",
@@ -52,7 +52,7 @@ export const events = [
   {
     id: 3,
     title: "Nukkad Natak",
-    category: "cultural",
+    category: "groupPerformance",
     date: "2024-02-19",
     time: "11:00 AM - 2:00 PM",
     location: "UIET, Chandigarh",
@@ -160,7 +160,7 @@ export const events = [
   {
     id: 8,
     title: "Charcoal Challenge",
-    category: "cultural",
+    category: "Fun",
     date: "2025-02-19",
     time: "12:00 PM - 2:00 PM",
     location: "UIET, Chandigarh",
@@ -180,7 +180,7 @@ export const events = [
   {
     id: 9,
     title: "Pocket Sized",
-    category: "cultural",
+    category: "fun",
     date: "2025-02-20",
     time: "12:00 PM - 1:30 PM",
     location: "UIET, Chandigarh",
@@ -276,7 +276,7 @@ export const events = [
   {
     id: 14,
     title: "Chess Tournament",
-    category: "Gaming",
+    category: "Sports",
     date: "2024-02-20",
     time: "11:00 AM Onwards",
     location: "UIET, Chandigarh",
@@ -679,7 +679,7 @@ export const events = [
   {
     id: 34,
     title: "Turncoat",
-    category: "cultural",
+    category: "Fun",
     date: "2025-02-20",
     time: "12:00 PM - 6:00 PM",
     location: "UIET, Chandigarh",
