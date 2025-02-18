@@ -11,6 +11,9 @@ import {
   Gamepad,
   Trophy,
   InfoIcon,
+  Laugh,
+  Medal,
+  Sparkle,
 } from "lucide-react";
 import {
   Card,
@@ -35,7 +38,11 @@ const EventsPage = () => {
     { id: "all", label: "All Events", icon: Trophy },
     { id: "technical", label: "Technical", icon: Code },
     { id: "cultural", label: "Cultural", icon: Music },
-    { id: "gaming", label: "Gaming", icon: Gamepad },
+    { id: "Gaming", label: "Gaming", icon: Gamepad },
+    { id: "Fun", label: "Fun", icon: Laugh },
+    { id: "Sports", label: "Sports", icon: Medal },
+    { id: "Creative", label: "Creative", icon: Sparkle },
+    { id: "groupPerformance", label: "Group Performance", icon: Users },
   ];
 
   const filteredEvents =
