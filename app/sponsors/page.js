@@ -73,6 +73,12 @@ const SponsorPage = () => {
           image:
             "https://res.cloudinary.com/dalvl67sv/image/upload/v1739190954/Decathlon_syetpk.png",
         },
+        {
+          name: "The Editing Table",
+          type: "Filming Partner",
+          image:
+            "https://res.cloudinary.com/dngc8i1iy/image/upload/v1740038494/The_Editing_Table-01_najdee.png",
+        },
         // Column2
         {
           name: "State Bank of India (SBI)",
@@ -170,6 +176,12 @@ const SponsorPage = () => {
           type: "Beverage Partner",
           image:
             "https://res.cloudinary.com/dalvl67sv/image/upload/v1739190958/coco_nmdngp.png",
+        },
+        {
+          name: "Quinji Tech",
+          type: "WebSecurity and Development Partner",
+          image:
+            "https://res.cloudinary.com/dngc8i1iy/image/upload/v1740038466/Quinji-logo-goonj2025_io1oev.png",
         },
       ],
     },
